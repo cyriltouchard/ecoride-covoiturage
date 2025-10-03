@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrammes UML EcoRide - Visualisation Interactive</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #27ae60 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+        }
+        
+        .nav-tab {
+            padding: 1rem 2rem;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .nav-tab:hover {
+            background: #e9ecef;
+            color: #27ae60;
+        }
+        
+        .nav-tab.active {
+            background: #27ae60;
+            color: white;
+            border-bottom: 3px solid #229954;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .diagram-container {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .diagram-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #27ae60;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .mermaid {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .description {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .actors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .actor-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 4px solid #27ae60;
+        }
+        
+        .actor-title {
+            font-weight: 600;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+        
+        .use-cases {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .use-cases li {
+            padding: 0.25rem 0;
+            color: #6c757d;
+        }
+        
+        .use-cases li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .legend {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 1rem 0;
+        }
+        
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .tech-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .export-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 0.5rem;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+        
+        .export-btn:hover {
+            background: #229954;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-tabs {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+            }
+            
+            .tab-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Diagrammes UML EcoRide</h1>
+            <p>Analyse Complète du Système - Version Interactive 2025</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">🎯 Vue d'Ensemble</button>
+            <button class="nav-tab" onclick="showTab('usecase')">👥 Cas d'Utilisation</button>
+            <button class="nav-tab" onclick="showTab('sequence')">🔄 Séquences</button>
+            <button class="nav-tab" onclick="showTab('database')">🗃️ Base de Données</button>
+            <button class="nav-tab" onclick="showTab('classes')">🏗️ Classes</button>
+            <button class="nav-tab" onclick="showTab('architecture')">🏛️ Architecture</button>
+            <button class="nav-tab" onclick="showTab('deployment')">🚀 Déploiement</button>
+        </div>
+        
+        <!-- Onglet Vue d'Ensemble -->
+        <div id="overview" class="tab-content active">
+            <h2>🎯 Vue d'Ensemble du Système EcoRide</h2>
+            
+            <div class="description">
+                <strong>EcoRide</strong> est une plateforme de covoiturage écologique qui connecte chauffeurs et passagers 
+                pour des trajets partagés. Le système utilise une architecture moderne avec Node.js, MongoDB/MySQL, et une interface web responsive.
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🏗️ Architecture Générale du Système</div>
+                <div class="mermaid">
+                graph TB
+                    subgraph "Frontend"
+                        UI[🌐 Interface Web]
+                        JS[📱 JavaScript SPA]
+                    end
+                    
+                    subgraph "Backend API"
+                        API[⚙️ Express.js API]
+                        AUTH[🔐 JWT Auth]
+                        VALID[✅ Validation]
+                    end
+                    
+                    subgraph "Base de Données"
+                        MONGO[(🍃 MongoDB)]
+                        MYSQL[(🐬 MySQL)]
+                    end
+                    
+                    UI --> API
+                    JS --> API
+                    API --> AUTH
+                    AUTH --> VALID
+                    API --> MONGO
+                    API --> MYSQL
+                    
+                    style UI fill:#e3f2fd
+                    style API fill:#e8f5e8
+                    style MONGO fill:#fff3e0
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <div class="tech-icon">🌐</div>
+                    <h4>Frontend</h4>
+                    <p>HTML5, CSS3, JavaScript ES6+</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">⚙️</div>
+                    <h4>Backend</h4>
+                    <p>Node.js, Express.js, JWT</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🗃️</div>
+                    <h4>Bases de Données</h4>
+                    <p>MongoDB, MySQL</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon">🔒</div>
+                    <h4>Sécurité</h4>
+                    <p>bcrypt, Helmet, CORS</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Onglet Cas d'Utilisation -->
+        <div id="usecase" class="tab-content">
+            <h2>👥 Diagrammes de Cas d'Utilisation</h2>
+            
+            <div class="actors-grid">
+                <div class="actor-card">
+                    <div class="actor-title">👤 Visiteur</div>
+                    <ul class="use-cases">
+                        <li>Consulter la page d'accueil</li>
+                        <li>Rechercher un covoiturage</li>
+                        <li>Voir détails d'un trajet</li>
+                        <li>S'inscrire</li>
+                        <li>Se connecter</li>
+                    </ul>
+                </div>
+                
+                <div class="actor-card">
+                    <div class="actor-title">🚗 Utilisateur</div>
+                    <ul class="use-cases">
+                        <li>Gérer son profil</li>
+                        <li>Consulter historique</li>
+                        <li>Laisser des avis</li>
+                        <li>Gérer ses crédits</li>
+                    </ul>
+                </div>
+                
+                <div class="actor-card">
+                    <div class="actor-title">🚙 Chauffeur</div>
+                    <ul class="use-cases">
+                        <li>Gérer ses véhicules</li>
+                        <li>Proposer un trajet</li>
+                        <li>Gérer ses trajets</li>
+                        <li>Démarrer/Terminer trajet</li>
+                    </ul>
+                </div>
+                
+                <div class="actor-card">
+                    <div class="actor-title">🧳 Passager</div>
+                    <ul class="use-cases">
+                        <li>Réserver une place</li>
+                        <li>Annuler réservation</li>
+                        <li>Évaluer chauffeur</li>
+                        <li>Suivre trajet</li>
+                    </ul>
+                </div>
+                
+                <div class="actor-card">
+                    <div class="actor-title">👔 Employé</div>
+                    <ul class="use-cases">
+                        <li>Modérer les avis</li>
+                        <li>Consulter litiges</li>
+                        <li>Valider/Refuser avis</li>
+                    </ul>
+                </div>
+                
+                <div class="actor-card">
+                    <div class="actor-title">👨‍💼 Administrateur</div>
+                    <ul class="use-cases">
+                        <li>Gérer employés</li>
+                        <li>Suspendre utilisateurs</li>
+                        <li>Consulter statistiques</li>
+                        <li>Configuration système</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🎯 Diagramme Principal des Cas d'Utilisation</div>
+                <div class="mermaid">
+graph TB
+    V[👤 Visiteur] 
+    U[🚗 Utilisateur]
+    P[🧳 Passager]
+    C[🚙 Chauffeur]
+    E[👔 Employé]
+    A[👨‍💼 Admin]
+    
+    subgraph "Système EcoRide"
+        UC1[Consulter accueil]
+        UC2[Rechercher trajet]
+        UC3[S'inscrire/Connecter]
+        UC4[Gérer profil]
+        UC5[Gérer véhicules]
+        UC6[Proposer trajet]
+        UC7[Réserver place]
+        UC8[Modérer avis]
+        UC9[Gérer système]
+    end
+    
+    V --> UC1
+    V --> UC2
+    V --> UC3
+    
+    U --> UC4
+    
+    C --> UC5
+    C --> UC6
+    
+    P --> UC7
+    
+    E --> UC8
+    
+    A --> UC9
+    
+    style V fill:#e3f2fd
+    style U fill:#f3e5f5
+    style C fill:#e8f5e8
+    style P fill:#fff3e0
+    style E fill:#fce4ec
+    style A fill:#f1f8e9
+                </div>
+            </div>
+        </div>
+        
+        <!-- Onglet Séquences -->
+        <div id="sequence" class="tab-content">
+            <h2>🔄 Diagrammes de Séquence</h2>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">📝 Séquence d'Inscription</div>
+                <div class="mermaid">
+sequenceDiagram
+    participant U as 👤 Utilisateur
+    participant F as 🌐 Frontend
+    participant S as ⚙️ Backend
+    participant DB as 💾 MongoDB
+    
+    U->>F: Remplit formulaire
+    F->>F: Validation client
+    F->>S: POST /api/users/register
+    S->>S: Validation serveur
+    S->>DB: Vérif unicité email
+    
+    alt Email existe
+        DB-->>S: Conflit
+        S-->>F: 400 Error
+        F-->>U: Message erreur
+    else Email unique
+        S->>S: Hash password
+        S->>DB: Créer utilisateur
+        DB-->>S: Utilisateur créé
+        S->>S: Générer JWT
+        S-->>F: 201 + token
+        F-->>U: Redirection
+    end
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🔐 Séquence de Connexion</div>
+                <div class="mermaid">
+sequenceDiagram
+    participant U as 👤 Utilisateur
+    participant F as 🌐 Frontend
+    participant S as ⚙️ Backend
+    participant DB as 💾 MongoDB
+    
+    U->>F: Email + Password
+    F->>S: POST /api/users/login
+    S->>DB: Recherche utilisateur
+    
+    alt Utilisateur trouvé
+        DB-->>S: Données user
+        S->>S: Vérif password
+        
+        alt Password correct
+            S->>S: Générer JWT
+            S-->>F: 200 + token + profil
+            F->>F: Stock token localStorage
+            F-->>U: Redirection selon rôle
+        else Password incorrect
+            S-->>F: 401 Unauthorized
+            F-->>U: "Identifiants incorrects"
+        end
+    else Utilisateur non trouvé
+        DB-->>S: Aucun résultat
+        S-->>F: 401 Unauthorized
+        F-->>U: "Identifiants incorrects"
+    end
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🚗 Séquence de Réservation</div>
+                <div class="mermaid">
+sequenceDiagram
+    participant P as 🧳 Passager
+    participant F as 🌐 Frontend
+    participant S as ⚙️ Backend
+    participant DB as 💾 MongoDB
+    
+    P->>F: Clic "Réserver"
+    F->>S: POST /api/rides/{id}/join + JWT
+    S->>S: Vérif token
+    S->>DB: Recherche trajet
+    
+    alt Trajet trouvé
+        DB-->>S: Données trajet
+        S->>S: Vérifications:<br/>- Places dispo<br/>- Pas le conducteur<br/>- Pas déjà passager
+        
+        alt Vérifications OK
+            S->>DB: Update trajet<br/>+ passager<br/>- places dispo
+            DB-->>S: Confirmation
+            S->>DB: Créer notification
+            S-->>F: 200 "Réservation OK"
+            F-->>P: "Succès !"
+        else Vérifications KO
+            S-->>F: 400 + raison
+            F-->>P: Message erreur
+        end
+    else Trajet non trouvé
+        DB-->>S: Aucun résultat
+        S-->>F: 404 Not Found
+        F-->>P: "Trajet introuvable"
+    end
+                </div>
+            </div>
+        </div>
+        
+        <!-- Onglet Base de Données -->
+        <div id="database" class="tab-content">
+            <h2>🗃️ Modèle Conceptuel de Données</h2>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">📊 Modèle Entité-Relation (MER)</div>
+                <div class="mermaid">
+erDiagram
+    USER {
+        ObjectId _id PK
+        string pseudo UK
+        string email UK
+        string password
+        number credits
+        string role
+        array vehicles FK
+        date createdAt
+        date updatedAt
+    }
+    
+    VEHICLE {
+        ObjectId _id PK
+        ObjectId userId FK
+        string brand
+        string model
+        string plate
+        string energy
+        number seats
+        date createdAt
+        date updatedAt
+    }
+    
+    RIDE {
+        ObjectId _id PK
+        ObjectId driver FK
+        ObjectId vehicle FK
+        string departure
+        string arrival
+        date departureDate
+        string departureTime
+        number price
+        number totalSeats
+        number availableSeats
+        string description
+        boolean isEcologic
+        array stops
+        array passengers FK
+        string status
+        date createdAt
+        date updatedAt
+    }
+    
+    REVIEW {
+        ObjectId _id PK
+        ObjectId rideId FK
+        ObjectId driverId FK
+        ObjectId authorId FK
+        number rating
+        string comment
+        string status
+        date createdAt
+        date updatedAt
+    }
+    
+    USER ||--o{ VEHICLE : owns
+    USER ||--o{ RIDE : drives
+    USER }o--o{ RIDE : passenger_in
+    VEHICLE ||--o{ RIDE : used_in
+    RIDE ||--o{ REVIEW : generates
+    USER ||--o{ REVIEW : writes
+                </div>
+            </div>
+            
+            <div class="legend">
+                <h4>🔑 Légende des Relations</h4>
+                <ul>
+                    <li><strong>||--o{</strong> : Relation un-à-plusieurs (1:N)</li>
+                    <li><strong>}o--o{</strong> : Relation plusieurs-à-plusieurs (M:N)</li>
+                    <li><strong>PK</strong> : Clé primaire</li>
+                    <li><strong>FK</strong> : Clé étrangère</li>
+                    <li><strong>UK</strong> : Contrainte d'unicité</li>
+                </ul>
+            </div>
+            
+            <div class="description">
+                <h4>📝 Règles de Gestion Principales</h4>
+                <ul>
+                    <li>Un utilisateur peut posséder plusieurs véhicules</li>
+                    <li>Un chauffeur peut proposer plusieurs trajets</li>
+                    <li>Un trajet est associé à un seul véhicule</li>
+                    <li>Un utilisateur peut être passager de plusieurs trajets</li>
+                    <li>Un trajet peut avoir plusieurs avis (un par passager)</li>
+                    <li>Les crédits sont gérés de manière transactionnelle</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Onglet Classes -->
+        <div id="classes" class="tab-content">
+            <h2>🏗️ Diagramme de Classes</h2>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">📐 Classes Métier Principales</div>
+                <div class="mermaid">
+classDiagram
+    class User {
+        -ObjectId _id
+        -string pseudo
+        -string email
+        -string password
+        -number credits
+        -string role
+        -ObjectId[] vehicles
+        
+        +register() boolean
+        +login() string
+        +updateProfile() boolean
+        +addVehicle() boolean
+        +joinRide() boolean
+        +createReview() boolean
+    }
+    
+    class Vehicle {
+        -ObjectId _id
+        -ObjectId userId
+        -string brand
+        -string model
+        -string plate
+        -string energy
+        -number seats
+        
+        +create() boolean
+        +update() boolean
+        +delete() boolean
+        +validate() boolean
+    }
+    
+    class Ride {
+        -ObjectId _id
+        -ObjectId driver
+        -ObjectId vehicle
+        -string departure
+        -string arrival
+        -Date departureDate
+        -number price
+        -number totalSeats
+        -number availableSeats
+        -ObjectId[] passengers
+        -string status
+        
+        +create() boolean
+        +addPassenger() boolean
+        +removePassenger() boolean
+        +start() boolean
+        +complete() boolean
+        +cancel() boolean
+    }
+    
+    class Review {
+        -ObjectId _id
+        -ObjectId rideId
+        -ObjectId driverId
+        -ObjectId authorId
+        -number rating
+        -string comment
+        -string status
+        
+        +create() boolean
+        +moderate() boolean
+        +approve() boolean
+        +reject() boolean
+    }
+    
+    User ||--o{ Vehicle : owns
+    User ||--o{ Ride : drives
+    User }o--o{ Ride : passenger_in
+    Vehicle ||--o{ Ride : used_in
+    Ride ||--o{ Review : has
+    User ||--o{ Review : writes
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🎮 Contrôleurs API</div>
+                <div class="mermaid">
+classDiagram
+    class UserController {
+        +register(req, res)
+        +login(req, res)
+        +getProfile(req, res)
+        +updateProfile(req, res)
+        +getUserHistory(req, res)
+    }
+    
+    class VehicleController {
+        +createVehicle(req, res)
+        +getUserVehicles(req, res)
+        +updateVehicle(req, res)
+        +deleteVehicle(req, res)
+    }
+    
+    class RideController {
+        +createRide(req, res)
+        +searchRides(req, res)
+        +getRideDetails(req, res)
+        +joinRide(req, res)
+        +leaveRide(req, res)
+        +updateRideStatus(req, res)
+    }
+    
+    class ReviewController {
+        +createReview(req, res)
+        +getReviewsByDriver(req, res)
+        +moderateReview(req, res)
+        +approveReview(req, res)
+    }
+    
+    UserController --> User
+    VehicleController --> Vehicle
+    RideController --> Ride
+    ReviewController --> Review
+                </div>
+            </div>
+        </div>
+        
+        <!-- Onglet Architecture -->
+        <div id="architecture" class="tab-content">
+            <h2>🏛️ Architecture Technique</h2>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🏗️ Architecture en Couches</div>
+                <div class="mermaid">
+graph TD
+    subgraph "Couche Présentation"
+        P1[Pages HTML]
+        P2[Styles CSS]
+        P3[Scripts JavaScript]
+        P4[Composants UI]
+    end
+    
+    subgraph "Couche Logique Métier"
+        L1[Contrôleurs API]
+        L2[Services Métier]
+        L3[Validations]
+        L4[Authentification]
+    end
+    
+    subgraph "Couche Accès Données"
+        D1[Modèles Mongoose]
+        D2[Requêtes MySQL]
+        D3[Cache Redis]
+        D4[Transactions]
+    end
+    
+    subgraph "Couche Persistance"
+        DB1[(MongoDB)]
+        DB2[(MySQL)]
+        DB3[(Redis Cache)]
+    end
+    
+    P1 --> L1
+    P2 --> L1
+    P3 --> L1
+    P4 --> L1
+    
+    L1 --> L2
+    L2 --> L3
+    L3 --> L4
+    
+    L2 --> D1
+    L2 --> D2
+    L2 --> D3
+    L2 --> D4
+    
+    D1 --> DB1
+    D2 --> DB2
+    D3 --> DB3
+    
+    style P1 fill:#e3f2fd
+    style L1 fill:#e8f5e8
+    style D1 fill:#fff3e0
+    style DB1 fill:#fce4ec
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🔄 Flux de Données API</div>
+                <div class="mermaid">
+sequenceDiagram
+    participant C as 🌐 Client
+    participant R as 🚏 Router
+    participant M as 🛡️ Middleware
+    participant Ctrl as 🎮 Controller
+    participant S as ⚙️ Service
+    participant DB as 💾 Database
+    
+    C->>R: HTTP Request
+    R->>M: Route Matching
+    M->>M: Authentication
+    M->>M: Validation
+    M->>M: Rate Limiting
+    M->>Ctrl: Validated Request
+    Ctrl->>S: Business Logic
+    S->>DB: Data Operations
+    DB-->>S: Data Response
+    S-->>Ctrl: Processed Data
+    Ctrl-->>M: HTTP Response
+    M-->>R: Final Response
+    R-->>C: JSON Response
+                </div>
+            </div>
+        </div>
+        
+        <!-- Onglet Déploiement -->
+        <div id="deployment" class="tab-content">
+            <h2>🚀 Architecture de Déploiement</h2>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">☁️ Infrastructure Cloud</div>
+                <div class="mermaid">
+graph TB
+    subgraph "Client Tier"
+        BROWSER[🌐 Navigateur Web]
+        MOBILE[📱 App Mobile]
+    end
+    
+    subgraph "Load Balancer"
+        LB[⚖️ Load Balancer<br/>nginx]
+    end
+    
+    subgraph "Application Tier"
+        APP1[🚀 Node.js Server 1]
+        APP2[🚀 Node.js Server 2]
+        APP3[🚀 Node.js Server 3]
+    end
+    
+    subgraph "Database Tier"
+        MONGO_PRIMARY[(🍃 MongoDB Primary)]
+        MONGO_SECONDARY[(🍃 MongoDB Secondary)]
+        MYSQL_PRIMARY[(🐬 MySQL Primary)]
+        REDIS[(📊 Redis Cache)]
+    end
+    
+    subgraph "Monitoring"
+        MONITOR[📊 Grafana]
+        LOGS[📋 ELK Stack]
+    end
+    
+    BROWSER --> LB
+    MOBILE --> LB
+    
+    LB --> APP1
+    LB --> APP2
+    LB --> APP3
+    
+    APP1 --> MONGO_PRIMARY
+    APP2 --> MONGO_PRIMARY
+    APP3 --> MONGO_PRIMARY
+    
+    MONGO_PRIMARY --> MONGO_SECONDARY
+    
+    APP1 --> MYSQL_PRIMARY
+    APP2 --> MYSQL_PRIMARY
+    APP3 --> MYSQL_PRIMARY
+    
+    APP1 --> REDIS
+    APP2 --> REDIS
+    APP3 --> REDIS
+    
+    APP1 --> MONITOR
+    APP2 --> MONITOR
+    APP3 --> MONITOR
+    
+    APP1 --> LOGS
+    APP2 --> LOGS
+    APP3 --> LOGS
+    
+    style BROWSER fill:#e3f2fd
+    style LB fill:#f3e5f5
+    style APP1 fill:#e8f5e8
+    style MONGO_PRIMARY fill:#fff3e0
+                </div>
+            </div>
+            
+            <div class="diagram-container">
+                <div class="diagram-title">🔄 Pipeline CI/CD</div>
+                <div class="mermaid">
+graph LR
+    DEV[💻 Développement] --> GIT[📁 Git Repository]
+    GIT --> CI[🔧 CI Pipeline]
+    CI --> TEST[🧪 Tests Automatisés]
+    TEST --> BUILD[📦 Build & Package]
+    BUILD --> STAGING[🎭 Environnement Staging]
+    STAGING --> VALIDATE[✅ Validation]
+    VALIDATE --> PROD[🚀 Production]
+    
+    CI --> LINT[📋 Linting]
+    CI --> SECURITY[🔒 Security Scan]
+    
+    style DEV fill:#e3f2fd
+    style CI fill:#e8f5e8
+    style TEST fill:#fff3e0
+    style PROD fill:#fce4ec
+                </div>
+            </div>
+            
+            <div class="description">
+                <h4>🔧 Configuration Technique</h4>
+                <ul>
+                    <li><strong>Serveurs d'application</strong> : Node.js v18+ avec PM2</li>
+                    <li><strong>Base de données</strong> : MongoDB Atlas + MySQL 8.0</li>
+                    <li><strong>Cache</strong> : Redis 7.0 pour les sessions</li>
+                    <li><strong>Load Balancer</strong> : nginx avec SSL/TLS</li>
+                    <li><strong>Monitoring</strong> : Grafana + Prometheus</li>
+                    <li><strong>Logs</strong> : ELK Stack (Elasticsearch, Logstash, Kibana)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>📚 Documentation Technique EcoRide</h3>
+            <p>Diagrammes UML interactifs - Version 2025</p>
+            <button class="export-btn" onclick="exportDiagrams()">📄 Exporter en PDF</button>
+            <button class="export-btn" onclick="printDiagrams()">🖨️ Imprimer</button>
+            <div style="margin-top: 1rem;">
+                <small>© 2025 EcoRide - Documentation générée automatiquement</small>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Configuration Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            sequence: {
+                diagramMarginX: 50,
+                diagramMarginY: 10,
+                actorMargin: 50,
+                width: 150,
+                height: 65,
+                boxMargin: 10,
+                boxTextMargin: 5,
+                noteMargin: 10,
+                messageMargin: 35,
+                mirrorActors: true,
+                bottomMarginAdj: 1,
+                useMaxWidth: true
+            },
+            er: {
+                diagramPadding: 20,
+                layoutDirection: 'TB',
+                minEntityWidth: 100,
+                minEntityHeight: 75,
+                entityPadding: 15,
+                stroke: 'gray',
+                fill: 'honeydew',
+                fontSize: 12,
+                useMaxWidth: true
+            }
+        });
+        
+        // Gestion des onglets
+        function showTab(tabName) {
+            // Masquer tous les contenus
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Désactiver tous les onglets
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Afficher le contenu sélectionné
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activer l'onglet sélectionné
+            event.target.classList.add('active');
+            
+            // Re-rendre les diagrammes Mermaid si nécessaire
+            setTimeout(() => {
+                mermaid.init();
+            }, 100);
+        }
+        
+        // Fonction d'export PDF
+        function exportDiagrams() {
+            window.print();
+        }
+        
+        // Fonction d'impression
+        function printDiagrams() {
+            window.print();
+        }
+        
+        // Initialisation au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation d'entrée pour les cartes
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les éléments animés
+            document.querySelectorAll('.diagram-container, .actor-card, .tech-item').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(element);
+            });
+        });
+        
+        // Gestion responsive pour les onglets
+        window.addEventListener('resize', function() {
+            const navTabs = document.querySelector('.nav-tabs');
+            if (window.innerWidth <= 768) {
+                navTabs.style.overflowX = 'auto';
+            } else {
+                navTabs.style.overflowX = 'visible';
+            }
+        });
+    </script>
+</body>
+</html>

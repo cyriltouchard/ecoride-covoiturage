@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide de Style EcoRide - Charte Graphique 2025</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/performance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Styles spécifiques pour le guide de style */
+        .style-guide {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .color-preview {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .color-info {
+            padding: 1rem;
+        }
+        
+        .color-name {
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #666;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .typography-demo {
+            margin: 2rem 0;
+        }
+        
+        .typography-sample {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .component-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .demo-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            background: #e9ecef;
+        }
+        
+        .icon-item i {
+            font-size: 2rem;
+            color: #27ae60;
+            margin-bottom: 0.5rem;
+        }
+        
+        .icon-name {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Styles pour les boutons de démonstration */
+        .btn-demo {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-primary-demo {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-primary-demo:hover {
+            background: #229954;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+        }
+        
+        .btn-secondary-demo {
+            background: transparent;
+            border: 2px solid #27ae60;
+            color: #27ae60;
+        }
+        
+        .btn-secondary-demo:hover {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-danger-demo {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger-demo:hover {
+            background: #c82333;
+        }
+        
+        /* Formulaires de démonstration */
+        .form-demo {
+            margin: 1rem 0;
+        }
+        
+        .form-group-demo {
+            margin-bottom: 1rem;
+        }
+        
+        .form-label-demo {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #343a40;
+        }
+        
+        .form-input-demo {
+            width: 100%;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Roboto', sans-serif;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-input-demo:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+        }
+        
+        /* Cartes de démonstration */
+        .card-demo {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 24px;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+        }
+        
+        .card-demo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        /* Responsive pour le guide */
+        @media (max-width: 768px) {
+            .style-guide {
+                padding: 1rem;
+            }
+            
+            .color-palette {
+                grid-template-columns: 1fr;
+            }
+            
+            .component-demo {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="style-guide">
+        <header style="background: linear-gradient(135deg, #27ae60 0%, #3498db 100%); color: white; padding: 2rem; text-align: center; border-radius: 12px; margin-bottom: 2rem;">
+            <h1 style="margin: 0; font-family: 'Poppins', sans-serif;">🎨 Guide de Style EcoRide</h1>
+            <p style="margin: 0.5rem 0 0 0; opacity: 0.9;">Charte Graphique 2025 - Version Interactive</p>
+        </header>
+
+        <nav style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+            <h3 style="margin-top: 0;">📋 Navigation</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <a href="#couleurs" style="color: #27ae60; text-decoration: none;">Couleurs</a>
+                <a href="#typographie" style="color: #27ae60; text-decoration: none;">Typographie</a>
+                <a href="#icones" style="color: #27ae60; text-decoration: none;">Icônes</a>
+                <a href="#boutons" style="color: #27ae60; text-decoration: none;">Boutons</a>
+                <a href="#formulaires" style="color: #27ae60; text-decoration: none;">Formulaires</a>
+                <a href="#cartes" style="color: #27ae60; text-decoration: none;">Cartes</a>
+            </div>
+        </nav>
+
+        <!-- Section Couleurs -->
+        <section id="couleurs">
+            <h2>🎨 Palette de Couleurs</h2>
+            <div class="color-palette">
+                <div class="color-card">
+                    <div class="color-preview" style="background: #27ae60;">#27ae60</div>
+                    <div class="color-info">
+                        <div class="color-name">Vert EcoRide</div>
+                        <div class="color-code">#27ae60</div>
+                        <small>Boutons principaux, liens actifs</small>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-preview" style="background: #3498db;">#3498db</div>
+                    <div class="color-info">
+                        <div class="color-name">Bleu Technologie</div>
+                        <div class="color-code">#3498db</div>
+                        <small>Liens, éléments interactifs</small>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-preview" style="background: #28a745; color: white;">#28a745</div>
+                    <div class="color-info">
+                        <div class="color-name">Succès</div>
+                        <div class="color-code">#28a745</div>
+                        <small>Messages de confirmation</small>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-preview" style="background: #ffc107; color: #333;">#ffc107</div>
+                    <div class="color-info">
+                        <div class="color-name">Attention</div>
+                        <div class="color-code">#ffc107</div>
+                        <small>Alertes, notifications</small>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-preview" style="background: #dc3545;">#dc3545</div>
+                    <div class="color-info">
+                        <div class="color-name">Danger</div>
+                        <div class="color-code">#dc3545</div>
+                        <small>Erreurs, suppressions</small>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-preview" style="background: #f8f9fa; color: #333;">#f8f9fa</div>
+                    <div class="color-info">
+                        <div class="color-name">Gris Interface</div>
+                        <div class="color-code">#f8f9fa</div>
+                        <small>Fond de page, sections</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Typographie -->
+        <section id="typographie">
+            <h2>📝 Typographie</h2>
+            <div class="typography-demo">
+                <div class="typography-sample">
+                    <h1 style="font-family: 'Poppins', sans-serif; font-size: 2.5rem; margin: 0;">Titre Principal (H1)</h1>
+                    <small>Poppins Bold, 40px, line-height: 1.2</small>
+                </div>
+                
+                <div class="typography-sample">
+                    <h2 style="font-family: 'Poppins', sans-serif; font-size: 2rem; margin: 0;">Titre de Section (H2)</h2>
+                    <small>Poppins Semi-Bold, 32px, line-height: 1.3</small>
+                </div>
+                
+                <div class="typography-sample">
+                    <h3 style="font-family: 'Poppins', sans-serif; font-size: 1.5rem; margin: 0;">Sous-titre (H3)</h3>
+                    <small>Poppins Semi-Bold, 24px, line-height: 1.4</small>
+                </div>
+                
+                <div class="typography-sample">
+                    <p style="font-family: 'Roboto', sans-serif; font-size: 1rem; margin: 0; line-height: 1.6;">
+                        Texte courant en Roboto Regular. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <small>Roboto Regular, 16px, line-height: 1.6</small>
+                </div>
+                
+                <div class="typography-sample">
+                    <small style="font-family: 'Roboto', sans-serif; font-size: 0.875rem;">
+                        Texte secondaire et métadonnées
+                    </small>
+                    <br>
+                    <small>Roboto Regular, 14px</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Icônes -->
+        <section id="icones">
+            <h2>🎯 Iconographie</h2>
+            <p>Bibliothèque Font Awesome 6 - Icônes spécifiques EcoRide :</p>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fas fa-car"></i>
+                    <div class="icon-name">Véhicules</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-route"></i>
+                    <div class="icon-name">Trajets</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="icon-name">Utilisateurs</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-leaf"></i>
+                    <div class="icon-name">Écologie</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="icon-name">Géolocalisation</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="icon-name">Temps</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-star"></i>
+                    <div class="icon-name">Évaluations</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-lock"></i>
+                    <div class="icon-name">Sécurité</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-cog"></i>
+                    <div class="icon-name">Paramètres</div>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-bell"></i>
+                    <div class="icon-name">Notifications</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Boutons -->
+        <section id="boutons">
+            <h2>🔘 Boutons</h2>
+            <div class="component-demo">
+                <div class="demo-section">
+                    <h3>Boutons Principaux</h3>
+                    <button class="btn-demo btn-primary-demo">
+                        <i class="fas fa-car"></i> Bouton Principal
+                    </button>
+                    <button class="btn-demo btn-secondary-demo">
+                        <i class="fas fa-heart"></i> Bouton Secondaire
+                    </button>
+                    <button class="btn-demo btn-danger-demo">
+                        <i class="fas fa-trash"></i> Bouton Danger
+                    </button>
+                </div>
+                
+                <div class="demo-section">
+                    <h3>États des Boutons</h3>
+                    <button class="btn-demo btn-primary-demo">Normal</button>
+                    <button class="btn-demo btn-primary-demo" disabled style="opacity: 0.5;">Désactivé</button>
+                    <button class="btn-demo btn-primary-demo" style="transform: translateY(-1px); box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);">Hover</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Formulaires -->
+        <section id="formulaires">
+            <h2>📝 Formulaires</h2>
+            <div class="component-demo">
+                <div class="demo-section">
+                    <h3>Éléments de Formulaire</h3>
+                    <form class="form-demo">
+                        <div class="form-group-demo">
+                            <label for="email" class="form-label-demo">Email</label>
+                            <input type="email" id="email" class="form-input-demo" placeholder="votre@email.com">
+                        </div>
+                        
+                        <div class="form-group-demo">
+                            <label for="password" class="form-label-demo">Mot de passe</label>
+                            <input type="password" id="password" class="form-input-demo" placeholder="••••••••">
+                        </div>
+                        
+                        <div class="form-group-demo">
+                            <label for="message" class="form-label-demo">Message</label>
+                            <textarea id="message" class="form-input-demo" rows="4" placeholder="Votre message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-demo btn-primary-demo">
+                            <i class="fas fa-paper-plane"></i> Envoyer
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="demo-section">
+                    <h3>États des Champs</h3>
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">Champ Normal</label>
+                        <input class="form-input-demo" value="Texte normal">
+                    </div>
+                    
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">Champ Focus</label>
+                        <input class="form-input-demo" value="Champ avec focus" style="border-color: #27ae60; box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);">
+                    </div>
+                    
+                    <div class="form-group-demo">
+                        <label class="form-label-demo">Champ Erreur</label>
+                        <input class="form-input-demo" value="Champ en erreur" style="border-color: #dc3545;">
+                        <small style="color: #dc3545;">Message d'erreur</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Cartes -->
+        <section id="cartes">
+            <h2>🃏 Cartes</h2>
+            <div class="component-demo">
+                <div class="demo-section">
+                    <h3>Carte Simple</h3>
+                    <div class="card-demo">
+                        <h4 style="margin-top: 0;">Titre de la Carte</h4>
+                        <p>Contenu de la carte avec du texte descriptif. Les cartes utilisent des ombres subtiles et des transitions fluides.</p>
+                        <button class="btn-demo btn-primary-demo">Action</button>
+                    </div>
+                </div>
+                
+                <div class="demo-section">
+                    <h3>Carte de Covoiturage</h3>
+                    <div class="card-demo">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div>
+                                <i class="fas fa-map-marker-alt" style="color: #27ae60;"></i>
+                                <strong>Paris → Lyon</strong>
+                            </div>
+                            <div style="font-size: 1.2rem; font-weight: bold; color: #27ae60;">25€</div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; margin-bottom: 1rem; color: #6c757d; font-size: 0.9rem;">
+                            <span><i class="fas fa-clock"></i> 14h30</span>
+                            <span><i class="fas fa-users"></i> 2 places</span>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <div style="width: 32px; height: 32px; background: #27ae60; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">M</div>
+                            <div>
+                                <div style="font-weight: 500;">Marie Dubois</div>
+                                <div style="font-size: 0.8rem; color: #6c757d;">
+                                    <i class="fas fa-star" style="color: #ffc107;"></i> 4.8
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn-demo btn-primary-demo" style="width: 100%;">
+                            <i class="fas fa-car"></i> Réserver
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 4rem; padding: 2rem; background: #f8f9fa; text-align: center; border-radius: 12px;">
+            <h3>📚 Documentation Complète</h3>
+            <p>Cette charte graphique est mise à jour régulièrement. Pour la version complète, consultez :</p>
+            <a href="Charte-Graphique-EcoRide-2025.md" style="color: #27ae60; text-decoration: none; font-weight: 500;">
+                📄 Charte Graphique Complète (Markdown)
+            </a>
+            
+            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e9ecef;">
+                <small style="color: #6c757d;">
+                    © 2025 EcoRide - Guide de Style Interactive<br>
+                    Dernière mise à jour : 3 octobre 2025
+                </small>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Ajout d'interactivité pour le guide de style
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll pour la navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Copie des codes couleur au clic
+            document.querySelectorAll('.color-code').forEach(element => {
+                element.addEventListener('click', function() {
+                    navigator.clipboard.writeText(this.textContent).then(() => {
+                        this.style.background = '#27ae60';
+                        this.style.color = 'white';
+                        setTimeout(() => {
+                            this.style.background = '#f8f9fa';
+                            this.style.color = '#666';
+                        }, 1000);
+                    });
+                });
+            });
+
+            // Animation des cartes au scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.color-card, .demo-section').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

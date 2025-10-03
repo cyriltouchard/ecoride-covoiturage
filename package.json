@@ -1,0 +1,16 @@
+{
+  "name": "ecoride-project",
+  "version": "1.0.0",
+  "description": "Projet EcoRide - Plateforme de covoiturage écologique",
+  "scripts": {
+    "start": "cd server && node server.js",
+    "dev": "cd server && npm run dev",
+    "init-db": "cd server && node init-db.js",
+    "test": "cd server && npm test",
+    "health": "curl -f http://127.0.0.1:3002/api/users/login -X POST -H 'Content-Type: application/json' -d '{\"email\":\"admin@ecoride.fr\",\"password\":\"password\"}' || echo 'Serveur non accessible'",
+    "audit": "echo 'Ouverture de l audit complet...' && start audit-complet-global.html"
+  },
+  "keywords": ["covoiturage", "ecologie", "transport"],
+  "author": "Cyril",
+  "license": "ISC"
+}

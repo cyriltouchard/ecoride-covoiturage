@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création de Compte - EcoRide</title>
+
+    <meta name="description" content="Créez votre compte EcoRide pour commencer à covoiturer.">
+    <meta name="author" content="Votre Nom et Prénom">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="creation-compte-page">
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="public/images/logo.png" alt="Logo EcoRide">
+                <span class="logo-text">EcoRide</span>
+            </a>
+            
+            <button class="hamburger-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="covoiturages.html">Covoiturages</a></li>
+                    
+                    <li id="user-nav-links" style="display: none;">
+                        <a href="proposer-covoiturage.html">Proposer un trajet</a>
+                    </li>
+                    <li id="user-nav-dashboard" style="display: none;">
+                        <a href="espace-utilisateur.html">Mon Espace</a>
+                    </li>
+    
+                    <li id="guest-nav-button">
+                        <a href="connexion.html" class="auth-button">Se connecter</a>
+                    </li>
+                    <li id="user-nav-button" style="display: none;">
+                        <button id="logout-button" class="logout-button">Déconnexion</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="auth-container">
+                <h1>Créer un compte</h1>
+                <p>Bénéficiez de 20 crédits à l'inscription pour vos premiers trajets !</p>
+                <form class="auth-form">
+                    <div class="form-group">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" id="pseudo" name="pseudo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" required minlength="8">
+                        <div id="password-strength-indicator" class="password-strength">
+                            <span class="strength-bar" id="strength-bar"></span>
+                        </div>
+                        <span class="strength-text" id="strength-text"></span>
+                    </div>
+                    <button type="submit" class="auth-button">Créer mon compte</button>
+                </form>
+                <div class="auth-links">
+                    <a href="connexion.html">J'ai déjà un compte</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EcoRide. Tous droits réservés.</p>
+            <nav>
+                <ul>
+                    <li><a href="conditions-generales.html">Conditions Générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de Confidentialité</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="secure-payment-info">
+                <p>Paiement sécurisé par :</p>
+                <div>
+                    <img src="public/images/paiements-securises-paypal-768x159.png" alt="Paiement sécurisé">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="public/js/script.js"></script>
+</body>
+</html>

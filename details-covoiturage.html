@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du covoiturage - EcoRide</title>
+
+    <meta name="description" content="Détails du covoiturage, avis du conducteur et informations sur le véhicule.">
+    <meta name="author" content="Votre Nom et Prénom">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body class="details-page"> 
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="public/images/logo.png" alt="Logo EcoRide">
+                <span class="logo-text">EcoRide</span>
+            </a>
+            
+            <button class="hamburger-menu" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="covoiturages.html">Covoiturages</a></li>
+                    
+                    <li id="user-nav-links" style="display: none;">
+                        <a href="proposer-covoiturage.html">Proposer un trajet</a>
+                    </li>
+                    <li id="user-nav-dashboard" style="display: none;">
+                        <a href="espace-utilisateur.html">Mon Espace</a>
+                    </li>
+    
+                    <li id="guest-nav-button">
+                        <a href="connexion.html" class="auth-button">Se connecter</a>
+                    </li>
+                    <li id="user-nav-button" style="display: none;">
+                        <button id="logout-button" class="logout-button">Déconnexion</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="detail-section" aria-labelledby="ride-main-title">
+            <div class="detail-container">
+                
+                <div class="ride-details">
+                    <h1 id="ride-main-title">Covoiturage pour <span id="ride-departure">...</span> vers <span id="ride-arrival">...</span></h1>
+                    <p id="ride-description">Chargement de la description...</p>
+                    
+                    <div class="ride-summary">
+                        <div class="summary-item"><i class="fas fa-calendar-alt"></i><p><strong>Date:</strong> <span id="ride-date">...</span></p></div>
+                        <div class="summary-item"><i class="fas fa-clock"></i><p><strong>Départ:</strong> <span id="ride-time">...</span></p></div>
+                        <div class="summary-item"><i class="fas fa-euro-sign"></i><p><strong>Prix:</strong> <span id="ride-price">...</span> €</p></div>
+                        <div class="summary-item"><i class="fas fa-chair"></i><p><strong>Places:</strong> <span id="ride-seats">...</span></p></div>
+                        <div class="summary-item" id="ride-stops-item" style="display:none;"><i class="fas fa-route"></i><p><strong>Arrêts:</strong> <span id="ride-stops"></span></p></div>
+                        <div class="summary-item" id="ride-ecologic-item" style="display:none;"><i class="fas fa-leaf"></i><p><span class="ecologic-badge">Voyage Écologique</span></p></div>
+                    </div>
+                </div>
+
+                <div class="driver-vehicle-info">
+                    <div class="driver-info-card">
+                        <h2>Conducteur</h2>
+                        <div class="driver-profile">
+                            <img id="driver-photo-lg" src="public/images/driver-default.jpeg" alt="Photo du chauffeur" class="driver-photo-lg">
+                            <h4 id="driver-name">...</h4>
+                            <div class="rating">Note: <span id="driver-rating">...</span>/5</div>
+                            <p id="driver-preferences">Préférences : ...</p>
+                        </div>
+                    </div>
+                    <div class="vehicle-info-card">
+                        <h2>Véhicule</h2>
+                        <p><strong>Modèle:</strong> <span id="vehicle-model">...</span></p>
+                        <p><strong>Marque:</strong> <span id="vehicle-brand">...</span></p>
+                        <p><strong>Immatriculation:</strong> <span id="vehicle-plate">...</span></p>
+                        <p><strong>Énergie:</strong> <span id="vehicle-energy">...</span></p>
+                    </div>
+                </div>
+
+                <div class="driver-reviews">
+                    <h2>Avis sur le conducteur</h2>
+                    <div id="reviews-container">
+                        </div>
+                </div>
+
+            </div>
+
+            <div class="action-buttons">
+                <button id="participate-button" class="participate-button">Participer</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 EcoRide. Tous droits réservés.</p>
+            <nav>
+                <ul>
+                    <li><a href="conditions-generales.html">Conditions Générales</a></li>
+                    <li><a href="politique-confidentialite.html">Politique de Confidentialité</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="secure-payment-info">
+                <p>Paiement sécurisé par :</p>
+                <div>
+                    <img src="public/images/paiements-securises-paypal-768x159.png" alt="Paiement sécurisé">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="module" src="public/js/script.js"></script>
+</body>
+</html>
