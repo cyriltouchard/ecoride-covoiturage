@@ -56,6 +56,7 @@ Cette application full-stack combine une interface utilisateur moderne avec un b
 - **Node.js** - Environnement d'exécution JavaScript
 - **Express.js** - Framework web minimaliste
 - **MongoDB** - Base de données NoSQL
+- **MySQL** - Base de données relationnelle (nouveau)
 - **Mongoose** - ODM pour MongoDB avec validation
 - **JWT** - Authentification par tokens sécurisés
 - **bcryptjs** - Chiffrement des mots de passe (salt=12)
@@ -63,11 +64,25 @@ Cette application full-stack combine une interface utilisateur moderne avec un b
 - **Helmet** - Middleware de sécurité HTTP
 - **express-validator** - Validation des données d'entrée
 
+### DevOps & Déploiement (NOUVEAU 🐳)
+- **Docker** - Containerisation de l'application
+- **Docker Compose** - Orchestration multi-services
+- **Alpine Linux** - Images légères et sécurisées
+- **Health Checks** - Monitoring automatique
+- **Volume Management** - Persistance des données
+
 ## 📦 Installation
 
 ### Prérequis
+
+#### Option Docker (RECOMMANDÉ 🐳)
+- **Docker Desktop** - [Télécharger](https://www.docker.com/products/docker-desktop)
+- **Git** - Pour cloner le projet
+
+#### Option Classique
 - **Node.js** (v16 ou plus récent) - [Télécharger](https://nodejs.org/)
 - **MongoDB** (local ou Atlas) - [Installation](https://www.mongodb.com/try/download/community)
+- **MySQL** (v8.0+) - [Installation](https://dev.mysql.com/downloads/mysql/)
 - **npm** ou **yarn** (généralement inclus avec Node.js)
 - **Git** pour le clonage du projet
 
@@ -84,6 +99,8 @@ npm install
 ```
 
 ### 3. Configuration de l'environnement
+
+#### Option A : Déploiement classique
 Créez un fichier `.env` dans le dossier `server/` :
 ```env
 # Configuration serveur
@@ -98,6 +115,17 @@ JWT_SECRET=VotreSecretTresFortPourLeJWT
 
 # Configuration CORS (optionnel)
 CORS_ORIGINS=http://localhost:3000,http://127.0.0.1:5500
+```
+
+#### Option B : Déploiement Docker (RECOMMANDÉ 🐳)
+```bash
+# Lancement complet avec Docker
+npm run docker:up
+
+# Accès direct à l'application
+# → http://localhost:3000
+# → MongoDB Admin: http://localhost:8081
+# → MySQL Admin: http://localhost:8082
 ```
 
 ### 4. Démarrage de MongoDB
@@ -165,8 +193,42 @@ ecoride/
 │   ├── images/          # Images et médias
 │   └── videos/          # Vidéos
 ├── document/            # Documentation technique
+├── docker/              # Configuration Docker
+├── Dockerfile           # Image containerisée
+├── docker-compose.yml   # Stack complète
+├── .dockerignore        # Optimisation build Docker
 └── *.html              # Pages web
 ```
+
+## 🐳 Déploiement Docker (NOUVEAU)
+
+### Stack containerisée complète
+- **🎯 Application Node.js** - Image Alpine optimisée
+- **🍃 MongoDB** - Base de données NoSQL avec initialisation
+- **🐬 MySQL** - Base de données relationnelle avec schéma
+- **📊 Interfaces admin** - MongoDB Express + phpMyAdmin
+
+### Commandes Docker simplifiées
+```bash
+# Lancer l'environnement complet
+npm run docker:up
+
+# Voir les logs de l'application
+npm run docker:logs
+
+# Arrêter tous les services
+npm run docker:down
+
+# Nettoyer complètement
+npm run docker:clean
+```
+
+### Avantages de la containerisation
+- ✅ **Environnement reproductible** : Identique dev/test/prod
+- ✅ **Déploiement rapide** : Stack complète en < 2 minutes
+- ✅ **Isolation sécurisée** : Conteneurs avec permissions minimales
+- ✅ **Scaling facile** : `docker-compose scale ecoride-app=3`
+- ✅ **Rollback instantané** : Versions d'images tagguées
 
 ## 🔒 Sécurité
 

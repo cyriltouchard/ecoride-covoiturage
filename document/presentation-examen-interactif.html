@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation EcoRide - Support Interactif ECF</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2e8b57, #4682b4);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e8b57, #4682b4);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .timing-bar {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border-left: 4px solid #2e8b57;
+            padding-left: 20px;
+        }
+
+        .section h2 {
+            color: #2e8b57;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3 {
+            color: #4682b4;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+
+        .timing {
+            background: #ffa500;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+
+        .code-demo {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .code-demo pre {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        .demo-step {
+            background: #e8f5e8;
+            border-left: 4px solid #2e8b57;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .demo-step h4 {
+            color: #2e8b57;
+            margin-bottom: 8px;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .tech-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e9ecef;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: #2e8b57;
+        }
+
+        .tech-card h4 {
+            color: #2e8b57;
+            margin-bottom: 10px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+        }
+
+        .feature-card h4 {
+            color: #4682b4;
+            margin-bottom: 10px;
+        }
+
+        .checklist {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .checklist ul {
+            list-style: none;
+        }
+
+        .checklist li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .navigation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-top: 2px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-button {
+            background: #2e8b57;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            background: #236940;
+        }
+
+        .nav-button.secondary {
+            background: #4682b4;
+        }
+
+        .nav-button.secondary:hover {
+            background: #3a6d96;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2e8b57, #4682b4);
+            width: 0;
+            transition: width 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .tech-stack {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="header">
+            <h1>🎯 PRÉSENTATION ECORIDE</h1>
+            <div class="subtitle">Support Interactif pour Examen ECF - 35 Minutes</div>
+            <div class="timing-bar">
+                <span>📅 Date: 9 octobre 2025</span>
+                <span>👨‍💻 Candidat: Touchard Cyril</span>
+                <span>⏱️ Durée: 35 minutes</span>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- SECTION 1: INTRODUCTION -->
+            <div class="section">
+                <h2>🚀 1. INTRODUCTION & CONTEXTE <span class="timing">5 min</span></h2>
+                
+                <div class="demo-step">
+                    <h4>🎯 Accroche d'Ouverture (1 minute)</h4>
+                    <p><em>"Bonjour, je suis Cyril Touchard et je vais vous présenter EcoRide, une plateforme de covoiturage qui répond aux enjeux actuels de mobilité durable. En 35 minutes, je vais vous démontrer comment cette application full-stack allie innovation technique et impact écologique."</em></p>
+                </div>
+
+                <h3>🌍 Problématique & Solution (2 minutes)</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>📊 Contexte Environnemental</h4>
+                        <ul>
+                            <li>Transport = 31% des émissions CO2 en France</li>
+                            <li>1 trajet sur 2 effectué seul en voiture</li>
+                            <li>Besoin urgent de solutions de mobilité partagée</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4>💡 Solution EcoRide</h4>
+                        <ul>
+                            <li>Plateforme web moderne de covoiturage</li>
+                            <li>Interface intuitive et responsive</li>
+                            <li>Système de crédits gamifié (20 crédits offerts)</li>
+                            <li>Focus sur l'impact écologique et l'économie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>🎯 Objectifs Techniques (2 minutes)</h3>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>🛡️ Sécurité</h4>
+                        <p>Authentification JWT + chiffrement bcrypt</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>⚡ Performance</h4>
+                        <p>Architecture hybride base de données</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>📈 Évolutivité</h4>
+                        <p>API REST modulaire et maintenable</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>📱 Expérience</h4>
+                        <p>Interface responsive mobile-first</p>
+                    </div>
+                </div>
+
+                <div class="demo-step">
+                    <h4>📊 Chiffres Clés du Projet</h4>
+                    <ul>
+                        <li>15+ pages fonctionnelles</li>
+                        <li>4 entités CRUD complètes (Users, Vehicles, Rides, Reviews)</li>
+                        <li>20+ endpoints API sécurisés</li>
+                        <li>Support multi-dispositifs (desktop, tablette, mobile)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 2: DÉMONSTRATION -->
+            <div class="section">
+                <h2>👥 2. DÉMONSTRATION UTILISATEUR <span class="timing">8 min</span></h2>
+                
+                <h3>🔗 Parcours d'Inscription (2 minutes)</h3>
+                <div class="code-demo">
+                    <h4>Validation côté client en temps réel</h4>
+                    <pre><code>// Validation email en temps réel
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Affichage erreurs contextuelles
+function showValidationError(field, message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    field.parentNode.appendChild(errorDiv);
+}</code></pre>
+                </div>
+
+                <div class="demo-step">
+                    <h4>🔍 Points de Démonstration</h4>
+                    <ol>
+                        <li><strong>Page d'accueil</strong> → Navigation vers inscription</li>
+                        <li><strong>Formulaire d'inscription</strong> → Validation en temps réel</li>
+                        <li><strong>Contrôles de saisie</strong> → Messages d'erreur contextuels</li>
+                        <li><strong>20 crédits offerts</strong> → Confirmation automatique</li>
+                    </ol>
+                </div>
+
+                <h3>🔐 Connexion & Tableau de Bord (2 minutes)</h3>
+                <div class="code-demo">
+                    <h4>Authentification JWT Sécurisée</h4>
+                    <pre><code>// Gestion token JWT
+const token = localStorage.getItem('ecoride_token');
+fetch('/api/user/profile', {
+    headers: { 
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    if (data.success) {
+        updateUserDashboard(data.data);
+    }
+});</code></pre>
+                </div>
+
+                <h3>🚗 Gestion des Véhicules (2 minutes)</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>➕ Ajout de Véhicule</h4>
+                        <ul>
+                            <li>Interface modale moderne</li>
+                            <li>Types d'énergie multiples</li>
+                            <li>Validation côté client/serveur</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4>✏️ Modification/Suppression</h4>
+                        <ul>
+                            <li>Actions en temps réel</li>
+                            <li>Confirmation avant suppression</li>
+                            <li>Gestion d'erreurs complète</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>🔍 Recherche & Réservation (2 minutes)</h3>
+                <div class="demo-step">
+                    <h4>Moteur de Recherche Avancé</h4>
+                    <ul>
+                        <li>Recherche par ville de départ/arrivée</li>
+                        <li>Filtrage par date et critères écologiques</li>
+                        <li>Affichage temps réel des places disponibles</li>
+                        <li>Système de réservation avec validation crédits</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 3: ARCHITECTURE -->
+            <div class="section">
+                <h2>🏗️ 3. ARCHITECTURE TECHNIQUE <span class="timing">12 min</span></h2>
+                
+                <h3>📋 Stack Technologique (3 minutes)</h3>
+                <div class="tech-stack">
+                    <div class="tech-card">
+                        <h4>Frontend</h4>
+                        <p><strong>HTML5/CSS3/JS</strong><br>
+                        Performance, compatibilité, maintenance</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Backend</h4>
+                        <p><strong>Node.js/Express</strong><br>
+                        Écosystème riche, performance, JavaScript full-stack</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Base de Données</h4>
+                        <p><strong>MongoDB + MySQL</strong><br>
+                        Flexibilité NoSQL + Intégrité relationnelle</p>
+                    </div>
+                    <div class="tech-card">
+                        <h4>Sécurité</h4>
+                        <p><strong>JWT + bcrypt + Helmet</strong><br>
+                        Authentification stateless + chiffrement robuste</p>
+                    </div>
+                </div>
+
+                <h3>🔄 Base de Données Hybride (4 minutes)</h3>
+                <div class="code-demo">
+                    <h4>MongoDB - Données Flexibles</h4>
+                    <pre><code>// Schéma Utilisateur évolutif
+const userSchema = new mongoose.Schema({
+    email: { type: String, required: true, unique: true },
+    profile: {
+        firstName: String,
+        lastName: String,
+        phone: String,
+        profilePicture: String
+    },
+    preferences: {
+        smokingAllowed: Boolean,
+        petsAllowed: Boolean,
+        musicPreference: String
+    },
+    history: [{
+        action: String,
+        timestamp: Date,
+        details: mongoose.Schema.Types.Mixed
+    }]
+});</code></pre>
+                </div>
+
+                <div class="code-demo">
+                    <h4>MySQL - Données Transactionnelles</h4>
+                    <pre><code>-- Table crédits avec intégrité ACID
+CREATE TABLE credits_transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    type ENUM('earning', 'spending') NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_id (user_id),
+    INDEX idx_created_at (created_at)
+);</code></pre>
+                </div>
+
+                <h3>🛡️ Sécurité Multi-Niveaux (3 minutes)</h3>
+                <div class="code-demo">
+                    <h4>Authentification JWT</h4>
+                    <pre><code>const jwt = require('jsonwebtoken');
+
+// Génération token avec expiration
+const generateToken = (userId) => {
+    return jwt.sign(
+        { userId, timestamp: Date.now() },
+        process.env.JWT_SECRET,
+        { expiresIn: '24h' }
+    );
+};
+
+// Middleware validation
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    
+    if (!token) return res.sendStatus(401);
+    
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.sendStatus(403);
+        req.user = user;
+        next();
+    });
+};</code></pre>
+                </div>
+
+                <h3>🔗 API REST Architecture (2 minutes)</h3>
+                <div class="demo-step">
+                    <h4>Endpoints Structurés</h4>
+                    <ul>
+                        <li><code>/api/users</code> - Gestion utilisateurs</li>
+                        <li><code>/api/vehicles</code> - CRUD véhicules</li>
+                        <li><code>/api/rides</code> - Gestion trajets</li>
+                        <li><code>/api/reviews</code> - Système d'évaluations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 4: DÉVELOPPEMENT -->
+            <div class="section">
+                <h2>💻 4. DÉVELOPPEMENT & CRUD <span class="timing">8 min</span></h2>
+                
+                <h3>🚗 CRUD Véhicules Complet (4 minutes)</h3>
+                <div class="code-demo">
+                    <h4>CREATE - Ajout véhicule</h4>
+                    <pre><code>const createVehicle = async (req, res) => {
+    try {
+        // Validation express-validator
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() });
+        }
+        
+        // Création véhicule MongoDB
+        const vehicle = new Vehicle({
+            ...req.body,
+            userId: req.user.userId,
+            createdAt: new Date()
+        });
+        
+        await vehicle.save();
+        
+        res.status(201).json({
+            success: true,
+            data: vehicle,
+            message: 'Véhicule ajouté avec succès'
+        });
+    } catch (error) {
+        res.status(500).json({ 
+            success: false, 
+            message: 'Erreur lors de la création' 
+        });
+    }
+};</code></pre>
+                </div>
+
+                <h3>🛣️ CRUD Trajets Avancé (2 minutes)</h3>
+                <div class="demo-step">
+                    <h4>Fonctionnalités Trajets</h4>
+                    <ul>
+                        <li>Validation véhicule appartient à l'utilisateur</li>
+                        <li>Calcul automatique de distance</li>
+                        <li>Gestion places disponibles en temps réel</li>
+                        <li>Système de réservation avec crédits</li>
+                    </ul>
+                </div>
+
+                <h3>🔄 Gestion d'État Avancée (2 minutes)</h3>
+                <div class="code-demo">
+                    <h4>State Management Global</h4>
+                    <pre><code>class EcoRideState {
+    constructor() {
+        this.user = null;
+        this.isAuthenticated = false;
+        this.vehicles = [];
+        this.rides = [];
+    }
+    
+    setUser(userData) {
+        this.user = userData;
+        this.isAuthenticated = true;
+        this.updateUI();
+        this.saveToLocalStorage();
+    }
+    
+    updateUI() {
+        const isLoggedIn = this.isAuthenticated;
+        document.getElementById('nav-login').style.display = 
+            isLoggedIn ? 'none' : 'block';
+        document.getElementById('nav-profile').style.display = 
+            isLoggedIn ? 'block' : 'none';
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- SECTION 5: QUALITÉ -->
+            <div class="section">
+                <h2>🔬 5. QUALITÉ & PERSPECTIVES <span class="timing">2 min</span></h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>📚 Documentation Complète</h4>
+                        <ul>
+                            <li>Documentation technique 1000+ lignes</li>
+                            <li>Guide CRUD détaillé avec exemples</li>
+                            <li>Manuel utilisateur interactif</li>
+                            <li>Diagrammes UML et architecture</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🚀 Évolutions Futures</h4>
+                        <ul>
+                            <li>WebSocket pour temps réel</li>
+                            <li>Progressive Web App (PWA)</li>
+                            <li>Machine Learning pour recommandations</li>
+                            <li>Microservices et Docker</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="demo-step">
+                    <h4>🌱 Impact Écologique</h4>
+                    <ul>
+                        <li>Calcul empreinte carbone économisée</li>
+                        <li>Gamification avec badges écologiques</li>
+                        <li>Partenariats avec collectivités locales</li>
+                        <li>Intégration transports en commun</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CHECKLIST DÉMONSTRATION -->
+            <div class="checklist">
+                <h4>📋 Checklist Démonstration Live</h4>
+                <ul>
+                    <li>Terminal et serveur prêts</li>
+                    <li>Base de données initialisée avec données test</li>
+                    <li>Navigation entre toutes les pages</li>
+                    <li>Fonctionnalités CRUD testées</li>
+                    <li>Code review préparé</li>
+                    <li>Documentation accessible</li>
+                </ul>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div class="demo-step">
+                <h4>🎯 CONCLUSION & QUESTIONS</h4>
+                <p><strong>📊 Bilan Technique :</strong></p>
+                <ul>
+                    <li>✅ Application full-stack fonctionnelle et sécurisée</li>
+                    <li>✅ Architecture moderne et évolutive</li>
+                    <li>✅ CRUD complets avec validation robuste</li>
+                    <li>✅ Interface responsive et accessible</li>
+                    <li>✅ Documentation professionnelle complète</li>
+                </ul>
+                <p><em>"Je vous remercie pour votre attention et reste à votre disposition pour vos questions."</em></p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <a href="../index.html" class="nav-button">🏠 Accueil EcoRide</a>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+            <a href="Index-Documentation-EcoRide-2025.md" class="nav-button secondary">📚 Documentation</a>
+        </div>
+    </div>
+
+    <script>
+        // Animation d'entrée
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.6s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // Simulation minuteur présentation
+        function startPresentationTimer() {
+            const totalTime = 35 * 60; // 35 minutes en secondes
+            let currentTime = 0;
+            const progressBar = document.querySelector('.progress-fill');
+            
+            const timer = setInterval(() => {
+                currentTime += 1;
+                const progress = (currentTime / totalTime) * 100;
+                progressBar.style.width = Math.min(progress, 100) + '%';
+                
+                if (currentTime >= totalTime) {
+                    clearInterval(timer);
+                    alert('⏰ Temps de présentation écoulé !');
+                }
+            }, 1000);
+        }
+
+        // Raccourcis clavier pour navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F5') {
+                e.preventDefault();
+                startPresentationTimer();
+            }
+        });
+    </script>
+</body>
+</html>

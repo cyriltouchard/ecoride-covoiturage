@@ -70,9 +70,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Servir les fichiers statiques du front-end
-// Assurez-vous que le chemin est correct par rapport à la racine du projet
-// Si 'public' est à la racine, alors 'public' est le chemin correct
-app.use(express.static('public'));
+// Le dossier 'public' est à la racine du projet, donc on remonte d'un niveau
+app.use(express.static('../public'));
 
 // Routes
 // Une route de base pour vérifier que l'API est fonctionnelle.

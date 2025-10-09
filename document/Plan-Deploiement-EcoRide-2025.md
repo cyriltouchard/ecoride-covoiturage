@@ -1,18 +1,26 @@
 # 🚀 **PLAN DE DÉPLOIEMENT ECORIDE 2025**
 
-*Guide complet de déploiement moderne avec Infrastructure as Code et DevOps*  
-*Version 2.0 - Dernière mise à jour : 3 octobre 2025*
+*Guide complet de déploiement moderne avec Docker, Infrastructure as Code et DevOps*  
+*Version 3.0 - Dernière mise à jour : 9 octobre 2025 - Intégration Docker*
 
 ---
 
 ## 📋 **RÉSUMÉ EXÉCUTIF**
 
 ### **🎯 Objectifs du Déploiement**
+- **Containerisation** : Déploiement Docker moderne et portable
 - **Performance** : Haute disponibilité 99.9% avec load balancing
 - **Sécurité** : Architecture Zero Trust avec chiffrement end-to-end
 - **Scalabilité** : Auto-scaling horizontal selon la charge
 - **Monitoring** : Observabilité complète avec Azure Monitor
 - **Compliance** : Respect RGPD et standards sécurité Azure
+
+### **🐳 Nouvelles Capacités Docker**
+- **Stack complète** containerisée (App + MongoDB + MySQL)
+- **Déploiement rapide** : < 1 minute pour environnement complet
+- **Scaling horizontal** : `docker-compose scale ecoride-app=N`
+- **Isolation sécurisée** : Conteneurs avec permissions minimales
+- **Rollback instantané** : Versions d'images tagguées
 
 ### **📊 Métriques Cibles**
 | Métrique | Objectif | Monitoring |
@@ -22,6 +30,94 @@
 | **Scalabilité** | 0-1000 utilisateurs | Auto-scaling |
 | **Récupération** | RTO: 1h, RPO: 15min | Backup automatisé |
 | **Sécurité** | Zero CVE critique | Azure Security Center |
+| **Déploiement Docker** | < 2 minutes | Container Health |
+
+---
+
+## 🐳 **0. STRATÉGIE CONTAINERISATION** {#docker-strategy}
+
+### **0.1 Architecture Docker EcoRide**
+
+EcoRide est maintenant entièrement containerisé pour un déploiement moderne et portable.
+
+#### **🏗️ Stack Containerisée**
+```yaml
+# docker-compose.yml - Production Ready
+version: '3.8'
+services:
+  ecoride-app:
+    image: ecoride:latest
+    replicas: 3
+    ports: ["3000:3000"]
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo-cluster:27017/ecoride
+      - MYSQL_HOST=mysql-cluster
+    depends_on: [ecoride-mongo, ecoride-mysql]
+    
+  ecoride-mongo:
+    image: mongo:7.0-alpine
+    volumes: [mongo_data:/data/db]
+    
+  ecoride-mysql:
+    image: mysql:8.0
+    volumes: [mysql_data:/var/lib/mysql]
+```
+
+#### **📦 Avantages Containerisation**
+✅ **Environnement reproductible** : Dev = Test = Prod  
+✅ **Déploiement rapide** : Stack complète en < 2 minutes  
+✅ **Isolation sécurisée** : Containers avec permissions minimales  
+✅ **Scaling horizontal** : `docker service scale ecoride-app=5`  
+✅ **Zero-downtime deployment** : Rolling updates  
+✅ **Portabilité cloud** : Azure Container Instances/Apps
+
+### **0.2 Pipeline Docker CI/CD**
+
+```yaml
+# .github/workflows/docker-deploy.yml
+name: Docker Deploy Pipeline
+on:
+  push:
+    branches: [main]
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Docker Image
+        run: |
+          docker build -t ecoride:${{ github.sha }} .
+          docker tag ecoride:${{ github.sha }} ecoride:latest
+          
+      - name: Push to Registry
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push ecoride:${{ github.sha }}
+          docker push ecoride:latest
+          
+      - name: Deploy to Azure
+        run: |
+          az container create \
+            --resource-group ecoride-prod \
+            --name ecoride-app \
+            --image ecoride:${{ github.sha }} \
+            --cpu 2 --memory 4
+```
+
+### **0.3 Monitoring Containers**
+
+```bash
+# Health checks et monitoring
+docker-compose exec ecoride-app curl -f http://localhost:3000/api/health
+docker stats ecoride-app ecoride-mongo ecoride-mysql
+
+# Logs centralisés
+docker-compose logs -f --tail=100 ecoride-app
+
+# Metrics avec Prometheus
+docker run -p 9090:9090 prom/prometheus
+```
 
 ---
 

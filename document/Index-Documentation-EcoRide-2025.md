@@ -20,8 +20,9 @@
 
 ### **💻 Je développe et maintiens le code**
 1. **Documentation Technique** → `Documentation-Technique-EcoRide-2025.md`
-2. **Dashboard Technique** → `documentation-technique-interactif.html`
-3. **Diagrammes UML** → `Diagrammes-UML-EcoRide-2025.md`
+2. **Guide CRUD Complet** → `DOCUMENTATION-CRUD-DETAILLEE.md`
+3. **Dashboard Technique** → `documentation-technique-interactif.html`
+4. **Diagrammes UML** → `Diagrammes-UML-EcoRide-2025.md`
 
 ### **📊 J'analyse l'architecture et les données**
 1. **Modélisation UML** → `Diagrammes-UML-EcoRide-2025.md`
@@ -36,10 +37,23 @@
 5. **Guide de Migration** → `Guide-Migration-Documentation-2025.md`
 
 ### **🛠️ Je développe et configure le système**
-1. **Guide MySQL + Crédits** → `GUIDE-MYSQL-CREDITS.md`
-2. **Guide Évaluation** → `GUIDE-EVALUATION-OPTION-B.md`
-3. **Architecture Système** → `Documentation-Technique-EcoRide-2025.md`
+1. **Guide CRUD Détaillé** → `DOCUMENTATION-CRUD-DETAILLEE.md`
+2. **Guide MySQL + Crédits** → `GUIDE-MYSQL-CREDITS.md`
+3. **Guide Évaluation** → `GUIDE-EVALUATION-OPTION-B.md`
+4. **Architecture Système** → `Documentation-Technique-EcoRide-2025.md`
 5. **Guide de Migration** → `Guide-Migration-Documentation-2025.md`
+
+### **🎓 Je prépare l'examen ECF**
+1. **Présentation Complète 35min** → `PRESENTATION-EXAMEN-ECORIDE-35MIN.md`
+2. **Support Interactif** → `presentation-examen-interactif.html`
+3. **Guide Démonstration Live** → `GUIDE-DEMONSTRATION-LIVE.md`
+4. **Script Complet** → `SCRIPT-PRESENTATION-COMPLET.md`
+
+### **🐳 Je déploie avec Docker**
+1. **Guide Intégration Docker** → `DOCKER-INTEGRATION-GUIDE.md`
+2. **Configuration Containerisation** → `../Dockerfile`
+3. **Stack Docker Compose** → `../docker-compose.yml`
+4. **Scripts Automatisés** → `../package.json` (docker:*)
 
 ---
 
@@ -59,8 +73,21 @@
 ### **📘 Guides Techniques (Markdown)**
 | Document | Description | Dernière MAJ | Type |
 |----------|-------------|--------------|------|
+| `DOCUMENTATION-CRUD-DETAILLEE.md` | Guide complet opérations CRUD (Create, Read, Update, Delete) | 09/10/2025 | Architecture |
 | `GUIDE-MYSQL-CREDITS.md` | Guide démarrage MySQL + système crédits | 03/10/2025 | Technique |
 | `GUIDE-EVALUATION-OPTION-B.md` | Guide évaluation et validation projet | 03/10/2025 | Méthodologie |
+
+### **🎓 Supports Examen ECF (Markdown)**
+| Document | Description | Dernière MAJ | Type |
+|----------|-------------|--------------|------|
+| `PRESENTATION-EXAMEN-ECORIDE-35MIN.md` | Plan détaillé présentation 35 minutes | 09/10/2025 | Examen |
+| `GUIDE-DEMONSTRATION-LIVE.md` | Script technique démonstration live | 09/10/2025 | Examen |
+| `SCRIPT-PRESENTATION-COMPLET.md` | Aide-mémoire avec répliques exactes | 09/10/2025 | Examen |
+
+### **🐳 Documentation Docker (Markdown)**
+| Document | Description | Dernière MAJ | Type |
+|----------|-------------|--------------|------|
+| `DOCKER-INTEGRATION-GUIDE.md` | Guide complet containerisation et déploiement | 09/10/2025 | DevOps |
 
 ### **🎨 Interfaces Interactives (HTML)**
 *📍 Toutes les interfaces sont maintenant centralisées dans le dossier `document/`*
