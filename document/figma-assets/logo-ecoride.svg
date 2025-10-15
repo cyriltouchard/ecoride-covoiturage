@@ -1,0 +1,15 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#2e8b57"/>
+      <stop offset="100%" stop-color="#4682b4"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="100" rx="12" fill="none"/>
+  <g transform="translate(16,12)">
+    <circle cx="38" cy="38" r="34" fill="url(#g1)" />
+    <path d="M18 40 C22 30, 34 26, 46 30 C58 34, 66 46, 70 56" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="90" y="50" font-family="Poppins, Arial, sans-serif" font-weight="700" font-size="36" fill="#2e2e2e">EcoRide</text>
+    <text x="90" y="74" font-family="Roboto, Arial, sans-serif" font-size="12" fill="#6b6b6b">Covoiturage écologique</text>
+  </g>
+</svg>

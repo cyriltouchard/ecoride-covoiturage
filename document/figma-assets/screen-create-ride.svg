@@ -1,0 +1,66 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f8f9fa"/>
+  
+  <!-- Header/Navbar -->
+  <rect width="1440" height="80" fill="#ffffff"/>
+  <rect x="0" y="79" width="1440" height="1" fill="#e6e9ee"/>
+  <circle cx="60" cy="40" r="20" fill="#2e8b57"/>
+  <text x="90" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#223344">EcoRide</text>
+  <circle cx="1360" cy="40" r="24" fill="#e6e9ee"/>
+  
+  <!-- Page title -->
+  <text x="120" y="150" font-family="Poppins, Arial" font-size="32" font-weight="700" fill="#223344">Proposer un trajet</text>
+  <text x="120" y="185" font-family="Poppins, Arial" font-size="16" fill="#536277">Partagez vos trajets et réduisez vos frais de transport</text>
+  
+  <!-- Form container -->
+  <rect x="120" y="220" width="800" height="640" rx="12" fill="#ffffff"/>
+  
+  <!-- Step indicator -->
+  <circle cx="200" cy="280" r="24" fill="#2e8b57"/>
+  <text x="200" y="290" font-family="Poppins, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+  <line x1="224" y1="280" x2="320" y2="280" stroke="#2e8b57" stroke-width="2"/>
+  <circle cx="344" cy="280" r="24" fill="#e6e9ee"/>
+  <text x="344" y="290" font-family="Poppins, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#9aa4b2">2</text>
+  <line x1="368" y1="280" x2="464" y2="280" stroke="#e6e9ee" stroke-width="2"/>
+  <circle cx="488" cy="280" r="24" fill="#e6e9ee"/>
+  <text x="488" y="290" font-family="Poppins, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#9aa4b2">3</text>
+  
+  <!-- Form section -->
+  <text x="160" y="360" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Itinéraire</text>
+  
+  <text x="160" y="395" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Ville de départ</text>
+  <rect x="160" y="405" width="720" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="180" y="435" font-family="Poppins, Arial" font-size="14" fill="#9aa4b2">Ex: Nancy, Place de la République</text>
+  
+  <text x="160" y="485" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Ville d'arrivée</text>
+  <rect x="160" y="495" width="720" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="180" y="525" font-family="Poppins, Arial" font-size="14" fill="#9aa4b2">Ex: Lyon, Gare Part-Dieu</text>
+  
+  <text x="160" y="585" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Date et heure</text>
+  
+  <text x="160" y="620" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Date de départ</text>
+  <rect x="160" y="630" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="180" y="660" font-family="Poppins, Arial" font-size="14" fill="#223344">25/10/2025</text>
+  
+  <text x="540" y="620" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Heure de départ</text>
+  <rect x="540" y="630" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="560" y="660" font-family="Poppins, Arial" font-size="14" fill="#223344">08:00</text>
+  
+  <text x="160" y="720" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Places et prix</text>
+  
+  <text x="160" y="755" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Nombre de places</text>
+  <rect x="160" y="765" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="180" y="795" font-family="Poppins, Arial" font-size="14" fill="#223344">3</text>
+  
+  <text x="540" y="755" font-family="Poppins, Arial" font-size="14" font-weight="600" fill="#223344">Prix par passager</text>
+  <rect x="540" y="765" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e6e9ee"/>
+  <text x="560" y="795" font-family="Poppins, Arial" font-size="14" fill="#223344">12,00 €</text>
+  
+  <!-- Action buttons -->
+  <rect x="160" y="850" width="200" height="48" rx="8" fill="#ffffff" stroke="#e6e9ee"/>
+  <text x="260" y="880" font-family="Poppins, Arial" font-size="16" font-weight="600" text-anchor="middle" fill="#536277">Annuler</text>
+  
+  <rect x="680" y="850" width="200" height="48" rx="8" fill="#2e8b57"/>
+  <text x="780" y="880" font-family="Poppins, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">Continuer</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Titre -->
+  <text x="40" y="50" font-family="Poppins, Arial" font-size="32" font-weight="700" fill="#223344">EcoRide Design System</text>
+  
+  <!-- Couleurs principales -->
+  <text x="40" y="120" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Palette de couleurs</text>
+  
+  <rect x="40" y="150" width="120" height="80" rx="8" fill="#2e8b57"/>
+  <text x="100" y="250" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Primary</text>
+  <text x="100" y="270" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#2e8b57</text>
+  
+  <rect x="180" y="150" width="120" height="80" rx="8" fill="#4682b4"/>
+  <text x="240" y="250" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Secondary</text>
+  <text x="240" y="270" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#4682b4</text>
+  
+  <rect x="320" y="150" width="120" height="80" rx="8" fill="#1f8a5b"/>
+  <text x="380" y="250" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Success</text>
+  <text x="380" y="270" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#1f8a5b</text>
+  
+  <rect x="460" y="150" width="120" height="80" rx="8" fill="#e74c3c"/>
+  <text x="520" y="250" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Danger</text>
+  <text x="520" y="270" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#e74c3c</text>
+  
+  <!-- Couleurs neutres -->
+  <text x="40" y="340" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Couleurs neutres</text>
+  
+  <rect x="40" y="370" width="120" height="80" rx="8" fill="#223344"/>
+  <text x="100" y="470" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Dark</text>
+  <text x="100" y="490" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#223344</text>
+  
+  <rect x="180" y="370" width="120" height="80" rx="8" fill="#536277"/>
+  <text x="240" y="470" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Gray</text>
+  <text x="240" y="490" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#536277</text>
+  
+  <rect x="320" y="370" width="120" height="80" rx="8" fill="#9aa4b2"/>
+  <text x="380" y="470" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Light Gray</text>
+  <text x="380" y="490" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#9aa4b2</text>
+  
+  <rect x="460" y="370" width="120" height="80" rx="8" fill="#e6e9ee"/>
+  <text x="520" y="470" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">Border</text>
+  <text x="520" y="490" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#e6e9ee</text>
+  
+  <rect x="600" y="370" width="120" height="80" rx="8" fill="#ffffff" stroke="#e6e9ee"/>
+  <text x="660" y="470" font-family="Poppins, Arial" font-size="14" text-anchor="middle" fill="#223344">White</text>
+  <text x="660" y="490" font-family="Poppins, Arial" font-size="12" text-anchor="middle" fill="#536277">#ffffff</text>
+  
+  <!-- Typographie -->
+  <text x="40" y="560" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Typographie</text>
+  
+  <text x="40" y="610" font-family="Poppins, Arial" font-size="42" font-weight="700" fill="#223344">Titre H1 - Poppins Bold 42px</text>
+  <text x="40" y="660" font-family="Poppins, Arial" font-size="32" font-weight="700" fill="#223344">Titre H2 - Poppins Bold 32px</text>
+  <text x="40" y="700" font-family="Poppins, Arial" font-size="24" font-weight="600" fill="#223344">Titre H3 - Poppins SemiBold 24px</text>
+  <text x="40" y="740" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#223344">Sous-titre - Poppins SemiBold 18px</text>
+  <text x="40" y="780" font-family="Poppins, Arial" font-size="16" fill="#536277">Corps de texte - Poppins Regular 16px</text>
+  <text x="40" y="820" font-family="Poppins, Arial" font-size="14" fill="#9aa4b2">Texte secondaire - Poppins Regular 14px</text>
+  <text x="40" y="860" font-family="Poppins, Arial" font-size="12" fill="#9aa4b2">Légende - Poppins Regular 12px</text>
+  
+  <!-- Espacements -->
+  <text x="40" y="930" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#223344">Espacements</text>
+  
+  <rect x="40" y="960" width="8" height="8" fill="#2e8b57"/>
+  <text x="60" y="968" font-family="Poppins, Arial" font-size="14" fill="#536277">xs: 8px</text>
+  
+  <rect x="40" y="990" width="16" height="16" fill="#2e8b57"/>
+  <text x="70" y="1003" font-family="Poppins, Arial" font-size="14" fill="#536277">sm: 16px</text>
+  
+  <rect x="40" y="1020" width="24" height="24" fill="#2e8b57"/>
+  <text x="80" y="1038" font-family="Poppins, Arial" font-size="14" fill="#536277">md: 24px</text>
+  
+  <rect x="40" y="1060" width="32" height="32" fill="#2e8b57"/>
+  <text x="90" y="1082" font-family="Poppins, Arial" font-size="14" fill="#536277">lg: 32px</text>
+  
+  <rect x="40" y="1110" width="48" height="48" fill="#2e8b57"/>
+  <text x="100" y="1140" font-family="Poppins, Arial" font-size="14" fill="#536277">xl: 48px</text>
+</svg>

@@ -17,6 +17,8 @@
 1. **Standards Design** → `Charte-Graphique-EcoRide-2025.md`
 2. **Interface Interactive** → `guide-style-interactif.html`
 3. **Maquettes** → `Maquettes.html`
+4. **🎨 Kit Figma Complet** → `figma-assets/FIGMA-STARTER-README.md`
+5. **Assets Design** → `figma-assets/` (SVG composants + écrans)
 
 ### **💻 Je développe et maintiens le code**
 1. **Documentation Technique** → `Documentation-Technique-EcoRide-2025.md`
@@ -89,6 +91,15 @@
 |----------|-------------|--------------|------|
 | `DOCKER-INTEGRATION-GUIDE.md` | Guide complet containerisation et déploiement | 09/10/2025 | DevOps |
 
+### **🎨 Kit Design Figma (SVG + Markdown)**
+| Document | Description | Dernière MAJ | Type |
+|----------|-------------|--------------|------|
+| `figma-assets/FIGMA-STARTER-README.md` | Guide complet import et utilisation Figma | 15/10/2025 | Design |
+| `figma-assets/colors-typography.svg` | Design system complet (couleurs + typo) | 15/10/2025 | Asset |
+| `figma-assets/screen-*.svg` | 5 templates d'écrans haute-fidélité | 15/10/2025 | Template |
+| `figma-assets/icon-*.svg` | Bibliothèque d'icônes (6 icônes) | 15/10/2025 | Asset |
+| `figma-assets/button-*.svg` | Composants boutons (primaire + secondaire) | 15/10/2025 | Composant |
+
 ### **🎨 Interfaces Interactives (HTML)**
 *📍 Toutes les interfaces sont maintenant centralisées dans le dossier `document/`*
 
@@ -137,7 +148,9 @@
    ↓
 2. guide-style-interactif.html                 # Interface interactive
    ↓
-3. Maquettes.html                              # Prototypes
+3. figma-assets/FIGMA-STARTER-README.md       # Kit Figma complet
+   ↓
+4. Maquettes.html                              # Prototypes
 ```
 
 ### **📋 Parcours Chef de Projet**
