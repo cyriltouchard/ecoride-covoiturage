@@ -1,6 +1,6 @@
-<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+<svg width="1440" height="1100" viewBox="0 0 1440 1100" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1440" height="900" fill="#f8f9fa"/>
+  <rect width="1440" height="1100" fill="#f8f9fa"/>
   
   <!-- Header avec dégradé vert/bleu (30%/70%) -->
   <rect width="1440" height="80" fill="url(#headerGrad)"/>
@@ -14,6 +14,13 @@
   <!-- Logo et texte EcoRide -->
   <circle cx="60" cy="40" r="24" fill="#ffffff"/>
   <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
+  
+  <!-- Menu Burger (icône 3 barres) -->
+  <g id="burger-menu">
+    <rect x="1340" y="30" width="30" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="1340" y="38" width="30" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="1340" y="46" width="30" height="3" rx="1.5" fill="#ffffff"/>
+  </g>
   
   <!-- Navigation -->
   <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
@@ -107,4 +114,27 @@
   <text x="520" y="875" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Conducteur: Sophie M. ⭐ 5.0 (18 avis)</text>
   
   <text x="1280" y="825" font-family="Poppins, Arial" font-size="28" font-weight="700" text-anchor="end" fill="#27ae60">10,00 €</text>
+  
+  <!-- Footer avec dégradé vert/bleu (30%/70%) -->
+  <rect y="1000" width="1440" height="100" fill="url(#footerGrad)"/>
+  <defs>
+    <linearGradient id="footerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Footer Content -->
+  <text x="200" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">© 2025 EcoRide - Tous droits réservés</text>
+  <text x="800" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Mentions légales</text>
+  <text x="950" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Politique de confidentialité</text>
+  <text x="1150" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Contact</text>
+  
+  <circle cx="1320" cy="1030" r="16" fill="rgba(255,255,255,0.2)"/>
+  <text x="1320" y="1036" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">f</text>
+  <circle cx="1360" cy="1030" r="16" fill="rgba(255,255,255,0.2)"/>
+  <text x="1360" y="1036" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">in</text>
+  
+  <line x1="100" y1="1070" x2="1340" y2="1070" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="720" y="1090" font-family="Roboto, Arial" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">Plateforme de covoiturage écologique • Réduisez votre empreinte carbone</text>
 </svg>

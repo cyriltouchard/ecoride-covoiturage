@@ -1,7 +1,7 @@
 # 🎨 Pack Figma EcoRide - Screens Fidèles au Site
 
 **Date:** 16 octobre 2025  
-**Version:** 2.0 - Screens précis basés sur le site réel  
+**Version:** 2.1 - Screens avec menu burger et footer complet  
 **Auteur:** Équipe EcoRide
 
 ---
@@ -14,19 +14,49 @@ Ce dossier contient **5 screens SVG haute-fidélité** basés exactement sur vot
 
 | Fichier | Page correspondante | Taille | Description |
 |---------|---------------------|--------|-------------|
-| `01-page-accueil.svg` | `index.html` | 1440x900 | Page d'accueil avec hero vidéo, présentation, avantages |
-| `02-recherche-covoiturages.svg` | `covoiturages.html` | 1440x900 | Recherche de trajets avec filtres et résultats |
-| `03-details-covoiturage.svg` | `details-covoiturage.html` | 1440x1000 | Détails d'un trajet avec infos conducteur et réservation |
-| `04-proposer-covoiturage.svg` | `proposer-covoiturage.html` | 1440x1000 | Formulaire de création de trajet |
-| `05-mon-espace.svg` | `espace-utilisateur.html` | 1440x1000 | Dashboard utilisateur avec véhicules et trajets |
+| `01-page-accueil.svg` | `index.html` | 1440x1100 | Page d'accueil avec hero vidéo, présentation, avantages + FOOTER |
+| `02-recherche-covoiturages.svg` | `covoiturages.html` | 1440x1100 | Recherche de trajets avec filtres et résultats + FOOTER |
+| `03-details-covoiturage.svg` | `details-covoiturage.html` | 1440x1200 | Détails d'un trajet avec infos conducteur et réservation + FOOTER |
+| `04-proposer-covoiturage.svg` | `proposer-covoiturage.html` | 1440x1200 | Formulaire de création de trajet + FOOTER |
+| `05-mon-espace.svg` | `espace-utilisateur.html` | 1440x1200 | Dashboard utilisateur avec véhicules et trajets + FOOTER |
+
+### 📄 Documentation
+| Fichier | Description |
+|---------|-------------|
+| `README-PACK-FIGMA.md` | Guide complet d'utilisation (ce fichier) |
+| `GUIDE-CAPTURE-VIDEO.md` | Instructions pour capturer l'image de la vidéo hero |
+
+---
+
+## ✨ Nouveautés v2.1
+
+### ✅ Menu Burger ajouté
+Chaque screen possède maintenant un **menu burger** (3 barres horizontales) en haut à droite :
+- Position : `x=1340, y=30`
+- Couleur : Blanc (`#ffffff`)
+- Pour le design responsive
+
+### ✅ Footer complet avec gradient 30/70
+Tous les screens ont maintenant un **footer identique au site** :
+- **Dégradé** : `#4CAF50` (30%) → `#2196F3` (70%)
+- **Hauteur** : 100px
+- **Contenu** :
+  - Copyright © 2025 EcoRide
+  - Liens : Mentions légales, Politique de confidentialité, Contact
+  - Icônes sociales (Facebook, LinkedIn)
+  - Baseline : "Plateforme de covoiturage écologique"
+
+### ✅ Placeholder vidéo amélioré
+Le screen `01-page-accueil.svg` a un **indicateur clair** pour remplacer le rectangle noir par l'image vidéo.
+👉 Consulte `GUIDE-CAPTURE-VIDEO.md` pour les instructions complètes.
 
 ---
 
 ## 🎨 Design System Respecté
 
 ### Couleurs utilisées (de votre site)
-- **Vert principal:** `#27ae60` / `#4CAF50` (header)
-- **Bleu secondaire:** `#3498db` / `#2196F3` (header)
+- **Vert principal:** `#27ae60` / `#4CAF50` (header/footer)
+- **Bleu secondaire:** `#3498db` / `#2196F3` (header/footer)
 - **Texte principal:** `#343a40`
 - **Texte secondaire:** `#6c757d`
 - **Background:** `#f8f9fa`
@@ -37,9 +67,11 @@ Ce dossier contient **5 screens SVG haute-fidélité** basés exactement sur vot
 - **Texte:** Roboto (Regular 400, Medium 500, Bold 700)
 
 ### Header/Footer
-- **Header:** Dégradé horizontal `#4CAF50` (30%) → `#2196F3` (70%)
-- **Height:** 80px
-- **Logo:** Cercle blanc + texte "EcoRide"
+- **Header:** Dégradé horizontal `#4CAF50` (30%) → `#2196F3` (70%)`
+- **Footer:** Dégradé horizontal `#4CAF50` (30%) → `#2196F3` (70%)` (IDENTIQUE)
+- **Height:** 80px (header), 100px (footer)
+- **Logo:** Cercle blanc + texte "EcoRide" + Menu burger
+- **Navigation:** Liens desktop + menu burger responsive
 
 ---
 

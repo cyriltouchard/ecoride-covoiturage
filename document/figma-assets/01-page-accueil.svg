@@ -1,6 +1,6 @@
-<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+<svg width="1440" height="1100" viewBox="0 0 1440 1100" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1440" height="900" fill="#f8f9fa"/>
+  <rect width="1440" height="1100" fill="#f8f9fa"/>
   
   <!-- Header avec dégradé vert/bleu (30%/70%) -->
   <rect width="1440" height="80" fill="url(#headerGrad)"/>
@@ -15,14 +15,23 @@
   <circle cx="60" cy="40" r="24" fill="#ffffff"/>
   <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
   
-  <!-- Navigation -->
+  <!-- Menu Burger (icône 3 barres) - responsive -->
+  <g id="burger-menu">
+    <rect x="1340" y="30" width="30" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="1340" y="38" width="30" height="3" rx="1.5" fill="#ffffff"/>
+    <rect x="1340" y="46" width="30" height="3" rx="1.5" fill="#ffffff"/>
+  </g>
+  
+  <!-- Navigation desktop (masqué en mobile) -->
   <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
   <text x="720" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Covoiturages</text>
   <rect x="1200" y="30" width="140" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
   <text x="1270" y="55" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Se connecter</text>
   
   <!-- Hero Section (vidéo placeholder + overlay) -->
+  <!-- IMPORTANT: Remplacer ce rectangle par l'image video-capture.jpg -->
   <rect x="0" y="80" width="1440" height="400" fill="#1a1a1a"/>
+  <text x="720" y="270" font-family="Arial" font-size="16" text-anchor="middle" fill="#666">📹 Placeholder vidéo - Remplacer par video-capture.jpg</text>
   <rect x="0" y="80" width="1440" height="400" fill="rgba(0,0,0,0.4)"/>
   
   <!-- Hero Content -->
@@ -62,5 +71,33 @@
   
   <rect x="950" y="820" width="340" height="60" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
   <text x="1120" y="845" font-family="Poppins, Arial" font-size="18" font-weight="600" text-anchor="middle" fill="#343a40">Sécurité</text>
-  <text x="1120" y="870" font-family="Roboto, Arial" font-size="13" text-anchor="middle" fill="#6c757d">Système d'avis et notation</text>
+  <text x="1120" y="870" font-family="Roboto, Arial" font-size="13" text-anchor="middle" fill="#6c757d">Profils vérifiés et avis</text>
+  
+  <!-- Footer avec dégradé vert/bleu (30%/70%) -->
+  <rect y="1000" width="1440" height="100" fill="url(#footerGrad)"/>
+  <defs>
+    <linearGradient id="footerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Footer Content -->
+  <text x="200" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">© 2025 EcoRide - Tous droits réservés</text>
+  
+  <!-- Footer Links -->
+  <text x="800" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Mentions légales</text>
+  <text x="950" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Politique de confidentialité</text>
+  <text x="1150" y="1035" font-family="Roboto, Arial" font-size="14" fill="#ffffff">Contact</text>
+  
+  <!-- Footer Social Icons placeholders -->
+  <circle cx="1320" cy="1030" r="16" fill="rgba(255,255,255,0.2)"/>
+  <text x="1320" y="1036" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">f</text>
+  <circle cx="1360" cy="1030" r="16" fill="rgba(255,255,255,0.2)"/>
+  <text x="1360" y="1036" font-family="Arial" font-size="12" text-anchor="middle" fill="#ffffff">in</text>
+  
+  <!-- Footer Separator -->
+  <line x1="100" y1="1070" x2="1340" y2="1070" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="720" y="1090" font-family="Roboto, Arial" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">Plateforme de covoiturage écologique • Réduisez votre empreinte carbone</text>
+  
 </svg>
