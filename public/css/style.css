@@ -85,7 +85,7 @@ p {
 /* -------------------------------------------------------------------------------------------------------------------------------- */
 
 header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: linear-gradient(to right, #4CAF50 30%, #2196F3 30%);
     color: var(--color-white);
     height: 80px;
     padding: 0 var(--spacing-lg);

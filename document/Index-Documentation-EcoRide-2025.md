@@ -17,8 +17,8 @@
 1. **Standards Design** → `Charte-Graphique-EcoRide-2025.md`
 2. **Interface Interactive** → `guide-style-interactif.html`
 3. **Maquettes** → `Maquettes.html`
-4. **🎨 Kit Figma Complet** → `figma-assets/FIGMA-STARTER-README.md`
-5. **Assets Design** → `figma-assets/` (SVG composants + écrans)
+4. **🎨 Pack Figma 5 Screens** → `figma-assets/README-PACK-FIGMA.md`
+5. **Assets SVG Précis** → `figma-assets/` (5 screens basés sur le site réel)
 
 ### **💻 Je développe et maintiens le code**
 1. **Documentation Technique** → `Documentation-Technique-EcoRide-2025.md`

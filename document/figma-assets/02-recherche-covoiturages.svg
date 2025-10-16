@@ -1,0 +1,110 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f8f9fa"/>
+  
+  <!-- Header avec dégradé vert/bleu (30%/70%) -->
+  <rect width="1440" height="80" fill="url(#headerGrad)"/>
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo et texte EcoRide -->
+  <circle cx="60" cy="40" r="24" fill="#ffffff"/>
+  <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
+  
+  <!-- Navigation -->
+  <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
+  <text x="720" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff" font-weight="600">Covoiturages</text>
+  <rect x="1200" y="30" width="140" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+  <text x="1270" y="55" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Se connecter</text>
+  
+  <!-- Search Hero Section -->
+  <rect x="0" y="80" width="1440" height="240" fill="#27ae60"/>
+  <text x="720" y="140" font-family="Poppins, Arial" font-size="36" font-weight="700" text-anchor="middle" fill="#ffffff">Trouvez votre covoiturage</text>
+  
+  <!-- Search Form -->
+  <rect x="220" y="170" width="1000" height="120" rx="12" fill="#ffffff"/>
+  
+  <!-- Form inputs -->
+  <rect x="250" y="200" width="220" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="270" y="230" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Adresse de départ</text>
+  
+  <rect x="490" y="200" width="220" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="510" y="230" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Adresse d'arrivée</text>
+  
+  <rect x="730" y="200" width="160" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="750" y="230" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Date du trajet</text>
+  
+  <rect x="910" y="200" width="120" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="930" y="230" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Nb. personnes</text>
+  
+  <rect x="1050" y="200" width="140" height="48" rx="8" fill="#27ae60"/>
+  <text x="1120" y="230" font-family="Roboto, Arial" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">Rechercher</text>
+  
+  <!-- Main Content Area -->
+  <!-- Sidebar Filters -->
+  <rect x="80" y="360" width="280" height="480" rx="12" fill="#ffffff"/>
+  <text x="110" y="400" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#343a40">Filtres</text>
+  
+  <!-- Filter options -->
+  <rect x="110" y="430" width="20" height="20" rx="4" fill="none" stroke="#27ae60" stroke-width="2"/>
+  <text x="140" y="446" font-family="Roboto, Arial" font-size="14" fill="#343a40">Voyage écologique</text>
+  
+  <text x="110" y="490" font-family="Roboto, Arial" font-size="14" fill="#343a40">Prix maximum</text>
+  <rect x="110" y="500" width="240" height="40" rx="6" fill="#f8f9fa" stroke="#e0e0e0"/>
+  
+  <text x="110" y="570" font-family="Roboto, Arial" font-size="14" fill="#343a40">Durée maximum (heures)</text>
+  <rect x="110" y="580" width="240" height="40" rx="6" fill="#f8f9fa" stroke="#e0e0e0"/>
+  
+  <text x="110" y="650" font-family="Roboto, Arial" font-size="14" fill="#343a40">Note minimale</text>
+  <rect x="110" y="660" width="240" height="40" rx="6" fill="#f8f9fa" stroke="#e0e0e0"/>
+  
+  <rect x="110" y="730" width="240" height="44" rx="8" fill="#27ae60"/>
+  <text x="230" y="757" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Appliquer les filtres</text>
+  
+  <!-- Results Section -->
+  <text x="400" y="400" font-family="Poppins, Arial" font-size="24" font-weight="600" fill="#343a40">Résultats de la recherche</text>
+  
+  <!-- Ride Card 1 -->
+  <rect x="400" y="430" width="960" height="140" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  
+  <!-- Driver photo placeholder -->
+  <circle cx="450" cy="500" r="40" fill="#e0e0e0"/>
+  <text x="450" y="508" font-family="Arial" font-size="11" text-anchor="middle" fill="#999">Photo</text>
+  
+  <!-- Ride details -->
+  <text x="520" y="475" font-family="Poppins, Arial" font-size="18" font-weight="700" fill="#343a40">Nancy → Lyon</text>
+  <text x="520" y="505" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Vendredi 25 Oct · 08:00</text>
+  <text x="520" y="530" font-family="Roboto, Arial" font-size="14" fill="#6c757d">3 places disponibles</text>
+  <text x="520" y="555" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Conducteur: Marie D. ⭐ 4.8 (24 avis)</text>
+  
+  <!-- Price -->
+  <text x="1280" y="505" font-family="Poppins, Arial" font-size="28" font-weight="700" text-anchor="end" fill="#27ae60">12,00 €</text>
+  
+  <!-- Ride Card 2 -->
+  <rect x="400" y="590" width="960" height="140" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  <circle cx="450" cy="660" r="40" fill="#e0e0e0"/>
+  <text x="450" y="668" font-family="Arial" font-size="11" text-anchor="middle" fill="#999">Photo</text>
+  
+  <text x="520" y="635" font-family="Poppins, Arial" font-size="18" font-weight="700" fill="#343a40">Nancy → Lyon</text>
+  <text x="520" y="665" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Vendredi 25 Oct · 14:30</text>
+  <text x="520" y="690" font-family="Roboto, Arial" font-size="14" fill="#6c757d">2 places disponibles</text>
+  <text x="520" y="715" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Conducteur: Thomas L. ⭐ 4.9 (31 avis)</text>
+  
+  <text x="1280" y="665" font-family="Poppins, Arial" font-size="28" font-weight="700" text-anchor="end" fill="#27ae60">15,00 €</text>
+  
+  <!-- Ride Card 3 -->
+  <rect x="400" y="750" width="960" height="140" rx="12" fill="#ffffff" stroke="#e0e0e0"/>
+  <circle cx="450" cy="820" r="40" fill="#e0e0e0"/>
+  <text x="450" y="828" font-family="Arial" font-size="11" text-anchor="middle" fill="#999">Photo</text>
+  
+  <text x="520" y="795" font-family="Poppins, Arial" font-size="18" font-weight="700" fill="#343a40">Nancy → Lyon</text>
+  <text x="520" y="825" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Samedi 26 Oct · 10:00</text>
+  <text x="520" y="850" font-family="Roboto, Arial" font-size="14" fill="#6c757d">4 places disponibles</text>
+  <text x="520" y="875" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Conducteur: Sophie M. ⭐ 5.0 (18 avis)</text>
+  
+  <text x="1280" y="825" font-family="Poppins, Arial" font-size="28" font-weight="700" text-anchor="end" fill="#27ae60">10,00 €</text>
+</svg>

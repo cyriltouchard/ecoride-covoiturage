@@ -1,0 +1,106 @@
+<svg width="1440" height="1000" viewBox="0 0 1440 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Header avec dégradé vert/bleu (30%/70%) -->
+  <rect width="1440" height="80" fill="url(#headerGrad)"/>
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo et texte EcoRide -->
+  <circle cx="60" cy="40" r="24" fill="#ffffff"/>
+  <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
+  
+  <!-- Navigation -->
+  <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
+  <text x="720" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Covoiturages</text>
+  <rect x="1200" y="30" width="140" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+  <text x="1270" y="55" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Se connecter</text>
+  
+  <!-- Main Container -->
+  <rect x="120" y="120" width="1200" height="840" rx="12" fill="#ffffff"/>
+  
+  <!-- Page Title -->
+  <text x="160" y="180" font-family="Poppins, Arial" font-size="28" font-weight="700" fill="#343a40">Covoiturage pour Nancy vers Lyon</text>
+  <text x="160" y="215" font-family="Roboto, Arial" font-size="15" fill="#6c757d">Description du trajet et informations complémentaires</text>
+  
+  <!-- Ride Summary Cards -->
+  <rect x="160" y="250" width="700" height="180" rx="8" fill="#f8f9fa"/>
+  
+  <!-- Summary items -->
+  <text x="190" y="290" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">📅 Date:</text>
+  <text x="290" y="290" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Vendredi 25 Oct 2025</text>
+  
+  <text x="190" y="330" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">🕐 Départ:</text>
+  <text x="290" y="330" font-family="Roboto, Arial" font-size="14" fill="#6c757d">08:00</text>
+  
+  <text x="190" y="370" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">💰 Prix:</text>
+  <text x="290" y="370" font-family="Roboto, Arial" font-size="14" fill="#6c757d">12,00 €</text>
+  
+  <text x="190" y="410" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">💺 Places:</text>
+  <text x="290" y="410" font-family="Roboto, Arial" font-size="14" fill="#6c757d">3 disponibles</text>
+  
+  <text x="450" y="290" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">🌿</text>
+  <text x="480" y="290" font-family="Roboto, Arial" font-size="13" font-weight="600" fill="#27ae60">Voyage Écologique</text>
+  
+  <!-- Driver Info Card -->
+  <text x="160" y="490" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#343a40">Conducteur</text>
+  <rect x="160" y="510" width="700" height="140" rx="8" fill="#f8f9fa"/>
+  
+  <!-- Driver photo -->
+  <circle cx="240" cy="580" r="50" fill="#e0e0e0"/>
+  <text x="240" y="588" font-family="Arial" font-size="12" text-anchor="middle" fill="#999">Photo</text>
+  
+  <!-- Driver details -->
+  <text x="320" y="565" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#343a40">Marie D.</text>
+  <text x="320" y="595" font-family="Roboto, Arial" font-size="14" fill="#6c757d">⭐ 4.8 (24 avis) · Membre depuis 2023</text>
+  <text x="320" y="625" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Préférences : Bavard(e), Musique autorisée</text>
+  
+  <!-- Vehicle Info -->
+  <text x="160" y="710" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#343a40">Véhicule</text>
+  <rect x="160" y="730" width="700" height="100" rx="8" fill="#f8f9fa"/>
+  
+  <text x="190" y="765" font-family="Roboto, Arial" font-size="14" fill="#343a40">Renault Clio · Blanc · AB-123-CD</text>
+  <text x="190" y="795" font-family="Roboto, Arial" font-size="13" fill="#6c757d">✓ Climatisation  ✓ Musique  ✓ Bavard(e)</text>
+  
+  <!-- Reviews Section -->
+  <text x="160" y="890" font-family="Poppins, Arial" font-size="20" font-weight="600" fill="#343a40">Avis sur le conducteur</text>
+  <rect x="160" y="910" width="700" height="90" rx="8" fill="#f8f9fa"/>
+  
+  <text x="190" y="940" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">Jean P. ⭐⭐⭐⭐⭐</text>
+  <text x="190" y="965" font-family="Roboto, Arial" font-size="13" fill="#6c757d">"Excellent trajet, conductrice très sympathique et ponctuelle !"</text>
+  <text x="190" y="988" font-family="Roboto, Arial" font-size="11" fill="#9ca3af">Il y a 2 jours</text>
+  
+  <!-- Booking Sidebar -->
+  <rect x="900" y="160" width="380" height="440" rx="12" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="940" y="210" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#343a40">Réservation</text>
+  
+  <text x="940" y="260" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Prix par passager</text>
+  <text x="940" y="295" font-family="Poppins, Arial" font-size="36" font-weight="700" fill="#27ae60">12,00 €</text>
+  
+  <text x="940" y="350" font-family="Roboto, Arial" font-size="14" font-weight="600" fill="#343a40">Nombre de places</text>
+  <rect x="940" y="365" width="200" height="48" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="1040" y="395" font-family="Roboto, Arial" font-size="16" text-anchor="middle" fill="#343a40">1</text>
+  
+  <line x1="940" y1="440" x2="1240" y2="440" stroke="#e0e0e0"/>
+  
+  <text x="940" y="475" font-family="Roboto, Arial" font-size="14" fill="#6c757d">Prix total</text>
+  <text x="1190" y="475" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="end" fill="#343a40">12,00 €</text>
+  
+  <text x="940" y="510" font-family="Roboto, Arial" font-size="13" fill="#6c757d">Frais de service</text>
+  <text x="1190" y="510" font-family="Roboto, Arial" font-size="13" text-anchor="end" fill="#6c757d">1,20 €</text>
+  
+  <text x="940" y="545" font-family="Roboto, Arial" font-size="16" font-weight="700" fill="#343a40">Total à payer</text>
+  <text x="1190" y="545" font-family="Roboto, Arial" font-size="16" font-weight="700" text-anchor="end" fill="#27ae60">13,20 €</text>
+  
+  <!-- Book Button -->
+  <rect x="940" y="630" width="300" height="56" rx="12" fill="#27ae60"/>
+  <text x="1090" y="665" font-family="Roboto, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">Réserver</text>
+  
+  <text x="940" y="730" font-family="Roboto, Arial" font-size="12" fill="#9ca3af">✓ Paiement sécurisé</text>
+  <text x="940" y="755" font-family="Roboto, Arial" font-size="12" fill="#9ca3af">✓ Annulation gratuite jusqu'à 24h avant</text>
+</svg>

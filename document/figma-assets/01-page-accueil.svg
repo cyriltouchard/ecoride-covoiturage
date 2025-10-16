@@ -1,0 +1,66 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="900" fill="#f8f9fa"/>
+  
+  <!-- Header avec dégradé vert/bleu (30%/70%) -->
+  <rect width="1440" height="80" fill="url(#headerGrad)"/>
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo (cercle placeholder) et texte EcoRide -->
+  <circle cx="60" cy="40" r="24" fill="#ffffff"/>
+  <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
+  
+  <!-- Navigation -->
+  <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
+  <text x="720" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Covoiturages</text>
+  <rect x="1200" y="30" width="140" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+  <text x="1270" y="55" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Se connecter</text>
+  
+  <!-- Hero Section (vidéo placeholder + overlay) -->
+  <rect x="0" y="80" width="1440" height="400" fill="#1a1a1a"/>
+  <rect x="0" y="80" width="1440" height="400" fill="rgba(0,0,0,0.4)"/>
+  
+  <!-- Hero Content -->
+  <text x="720" y="240" font-family="Poppins, Arial" font-size="48" font-weight="700" text-anchor="middle" fill="#ffffff">Voyagez plus vert, ensemble !</text>
+  <text x="720" y="290" font-family="Roboto, Arial" font-size="18" text-anchor="middle" fill="#ffffff">Trouvez votre prochain trajet en covoiturage pour réduire votre empreinte</text>
+  <text x="720" y="315" font-family="Roboto, Arial" font-size="18" text-anchor="middle" fill="#ffffff">écologique et économiser sur vos déplacements.</text>
+  
+  <!-- CTA Button -->
+  <rect x="570" y="350" width="300" height="56" rx="8" fill="#27ae60"/>
+  <text x="720" y="385" font-family="Roboto, Arial" font-size="16" font-weight="700" text-anchor="middle" fill="#ffffff">Rechercher un trajet</text>
+  
+  <!-- About Section -->
+  <text x="720" y="540" font-family="Poppins, Arial" font-size="32" font-weight="600" text-anchor="middle" fill="#343a40">Qui sommes-nous ?</text>
+  
+  <text x="200" y="590" font-family="Roboto, Arial" font-size="15" fill="#6c757d">La startup "EcoRide", fraîchement créée en France, a pour objectif de réduire l'impact</text>
+  <text x="200" y="615" font-family="Roboto, Arial" font-size="15" fill="#6c757d">environnemental des déplacements en encourageant le covoiturage. Nous prônons une</text>
+  <text x="200" y="640" font-family="Roboto, Arial" font-size="15" fill="#6c757d">approche écologique et souhaitons devenir la principale plateforme de covoiturage</text>
+  <text x="200" y="665" font-family="Roboto, Arial" font-size="15" fill="#6c757d">pour les voyageurs soucieux de l'environnement.</text>
+  
+  <!-- Images placeholders -->
+  <rect x="900" y="580" width="220" height="140" rx="8" fill="#e0e0e0"/>
+  <text x="1010" y="655" font-family="Arial" font-size="12" text-anchor="middle" fill="#999">covoiturage.jpeg</text>
+  <rect x="1150" y="580" width="220" height="140" rx="8" fill="#e0e0e0"/>
+  <text x="1260" y="655" font-family="Arial" font-size="12" text-anchor="middle" fill="#999">nature.jpeg</text>
+  
+  <!-- Advantages Section -->
+  <text x="720" y="790" font-family="Poppins, Arial" font-size="32" font-weight="600" text-anchor="middle" fill="#343a40">Pourquoi choisir EcoRide ?</text>
+  
+  <!-- Advantage cards -->
+  <rect x="150" y="820" width="340" height="60" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="320" y="845" font-family="Poppins, Arial" font-size="18" font-weight="600" text-anchor="middle" fill="#343a40">Économique</text>
+  <text x="320" y="870" font-family="Roboto, Arial" font-size="13" text-anchor="middle" fill="#6c757d">Partagez les frais de voyage</text>
+  
+  <rect x="550" y="820" width="340" height="60" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="720" y="845" font-family="Poppins, Arial" font-size="18" font-weight="600" text-anchor="middle" fill="#343a40">Écologique</text>
+  <text x="720" y="870" font-family="Roboto, Arial" font-size="13" text-anchor="middle" fill="#6c757d">Réduisez les émissions de CO2</text>
+  
+  <rect x="950" y="820" width="340" height="60" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="1120" y="845" font-family="Poppins, Arial" font-size="18" font-weight="600" text-anchor="middle" fill="#343a40">Sécurité</text>
+  <text x="1120" y="870" font-family="Roboto, Arial" font-size="13" text-anchor="middle" fill="#6c757d">Système d'avis et notation</text>
+</svg>

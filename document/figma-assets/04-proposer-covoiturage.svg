@@ -1,0 +1,81 @@
+<svg width="1440" height="1000" viewBox="0 0 1440 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1440" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Header avec dégradé vert/bleu (30%/70%) -->
+  <rect width="1440" height="80" fill="url(#headerGrad)"/>
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" x2="100%">
+      <stop offset="30%" stop-color="#4CAF50"/>
+      <stop offset="30%" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo et texte EcoRide -->
+  <circle cx="60" cy="40" r="24" fill="#ffffff"/>
+  <text x="94" y="50" font-family="Poppins, Arial" font-size="24" font-weight="700" fill="#ffffff">EcoRide</text>
+  
+  <!-- Navigation -->
+  <text x="600" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Accueil</text>
+  <text x="720" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff">Covoiturages</text>
+  <text x="880" y="50" font-family="Roboto, Arial" font-size="16" fill="#ffffff" font-weight="600">Proposer un trajet</text>
+  <rect x="1200" y="30" width="140" height="40" rx="8" fill="rgba(255,255,255,0.2)"/>
+  <text x="1270" y="55" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#ffffff">Déconnexion</text>
+  
+  <!-- Main Content -->
+  <rect x="320" y="140" width="800" height="820" rx="12" fill="#ffffff"/>
+  
+  <!-- Page Title -->
+  <text x="720" y="200" font-family="Poppins, Arial" font-size="32" font-weight="700" text-anchor="middle" fill="#343a40">Proposer un nouveau covoiturage</text>
+  <text x="720" y="235" font-family="Roboto, Arial" font-size="14" text-anchor="middle" fill="#6c757d">Remplissez les informations ci-dessous pour publier votre annonce et trouver des passagers.</text>
+  
+  <!-- Form Section 1: Itinéraire -->
+  <text x="360" y="290" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#343a40">📍 Itinéraire</text>
+  
+  <text x="360" y="325" font-family="Roboto, Arial" font-size="14" fill="#343a40">Ville de départ</text>
+  <rect x="360" y="335" width="720" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="365" font-family="Roboto, Arial" font-size="14" fill="#9ca3af">Ex: Nancy, Place de la République</text>
+  
+  <text x="360" y="415" font-family="Roboto, Arial" font-size="14" fill="#343a40">Ville d'arrivée</text>
+  <rect x="360" y="425" width="720" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="455" font-family="Roboto, Arial" font-size="14" fill="#9ca3af">Ex: Lyon, Gare Part-Dieu</text>
+  
+  <!-- Form Section 2: Date et Heure -->
+  <text x="360" y="515" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#343a40">📅 Date et Heure</text>
+  
+  <text x="360" y="550" font-family="Roboto, Arial" font-size="14" fill="#343a40">Date de départ</text>
+  <rect x="360" y="560" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="590" font-family="Roboto, Arial" font-size="14" fill="#343a40">25/10/2025</text>
+  
+  <text x="740" y="550" font-family="Roboto, Arial" font-size="14" fill="#343a40">Heure de départ</text>
+  <rect x="740" y="560" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="760" y="590" font-family="Roboto, Arial" font-size="14" fill="#343a40">08:00</text>
+  
+  <!-- Form Section 3: Véhicule et Places -->
+  <text x="360" y="660" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#343a40">🚗 Véhicule et Places</text>
+  
+  <text x="360" y="695" font-family="Roboto, Arial" font-size="14" fill="#343a40">Mon véhicule</text>
+  <rect x="360" y="705" width="720" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="735" font-family="Roboto, Arial" font-size="14" fill="#343a40">Renault Clio - AB-123-CD</text>
+  
+  <text x="360" y="785" font-family="Roboto, Arial" font-size="14" fill="#343a40">Nombre de places proposées</text>
+  <rect x="360" y="795" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="825" font-family="Roboto, Arial" font-size="14" fill="#343a40">3</text>
+  
+  <!-- Form Section 4: Prix et Options -->
+  <text x="360" y="895" font-family="Poppins, Arial" font-size="18" font-weight="600" fill="#343a40">💰 Prix et Options</text>
+  
+  <text x="360" y="930" font-family="Roboto, Arial" font-size="14" fill="#343a40">Prix par passager (€)</text>
+  <rect x="360" y="940" width="340" height="48" rx="8" fill="#f8f9fa" stroke="#e0e0e0"/>
+  <text x="380" y="970" font-family="Roboto, Arial" font-size="14" fill="#343a40">12,00</text>
+  
+  <rect x="740" y="945" width="20" height="20" rx="4" fill="#27ae60" stroke="#27ae60" stroke-width="2"/>
+  <text x="770" y="961" font-family="Roboto, Arial" font-size="14" fill="#343a40">Marquer comme voyage écologique</text>
+  
+  <!-- Action Buttons -->
+  <rect x="360" y="1015" width="200" height="48" rx="8" fill="#ffffff" stroke="#e0e0e0"/>
+  <text x="460" y="1045" font-family="Roboto, Arial" font-size="14" font-weight="600" text-anchor="middle" fill="#6c757d">Annuler</text>
+  
+  <rect x="880" y="1015" width="200" height="48" rx="8" fill="#27ae60"/>
+  <text x="980" y="1045" font-family="Roboto, Arial" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">Publier le covoiturage</text>
+</svg>
